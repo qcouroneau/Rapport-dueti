@@ -1,0 +1,90 @@
+= Le projet FinanceJ
+
+Durant la seconde session, j'ai pu travailler sur un projet de maintenance informatique, grâce au cours LOG240 "Tests et maintenance".
+
+== Introduction
+
+La firme de consultation MaintenancePlus, qui est un spécialiste dans la maintenance et
+le test de logiciels, vient d’assigner à mon équipe son premier contrat de travail.
+La situation de l’entreprise BudgetPersonnel2000, pour laquelle MaintenancePlus
+requiert vos services, est la suivante :
+
+* BudgetPersonnel2000 est une entreprise qui vend des services à des particuliers afin de les aider à gérer leur budget
+* Il y a un an, l’un de ses gestionnaires a eu l’idée de développer un logiciel que l’entreprise pourrait vendre à ses clients pendant les rencontres, afin de générer plus de bénéfices
+* Une tierce personne à donc été embauchée par BudgetPersonnel2000 pour développer et assurer la maintenance de son logiciel, qu’elle a dénommé FinanceJ.
+* Ayant trouvé un autre emploi, cette tierce personne vient de quitter son poste à BudgetPersonnel2000 qui se presse alors de recueillir les services de la firme MaintenancePlus pour assurer désormais la maintenance de FinanceJ.
+
+L’état du logiciel FinanceJ n’est pas reluisant. Ses utilisateurs trouvent qu’il n’est pas assez
+convivial, qu’il exécute des opérations qui peuvent briser l’intégrité de la base de
+données, et que certaines de ses fonctionnalités ne s’exécutent même pas. Votre équipe
+a donc la mission de le prendre en charge le logiciel dans un environnement de
+maintenance réel pour pouvoir l’améliorer, conformément aux normes qui régissent le
+domaine.
+
+image:image/.jpg[width=450]
+
+Le but du projet est donc de reprendre cette application, et de l'améliorer pour l'enmener vers une version utilisable.
+
+
+== Demande client
+
+Le projet commence par une phase une demande client. Elle consiste à fournir une interface de
+
+Le sujet du laboratoire porte sur la documentation du logiciel FinanceJ, la demande de changement d’un client, l’implémentation de ce changement ainsi que l’amélioration de quelques classes qui posent présentement problème pour le bon fonctionnement de ce programme.
+
+Il est ainsi demandé à l’équipe de développement d’apporter des modifications apportant de nouvelles  fonctionnalités à l’application. Ces modifications devant apporter “un système de droit d'accès au logiciel (login, mot de passe avec différent droit)”.
+
+Trois fonctionnalités majeures ont donc été définies à partir de cette demande.
+
+Un système d’authentification (fenêtre prévue à cet effet) comprenant :
+
+* Une création d’utilisateurs (login + password).
+* La correspondance de la pair login password avec database pour se connecter à l’application.
+* La suppression d’utilisateur.
+
+Un Système d'attribution de droits (fenêtre prévue à cet effet) :
+
+* Master user capable de donner des droits aux autres users.
+* Master user capable de supprimer des droits aux autres users.
+
+Limitation du logiciel en fonction des droits (partie non visible des modifications) :
+
+* Accès à certaines parties du logiciel en fonction des droits.
+* Accès à certaines fonctionnalités en fonction des droits (tout le monde ne doit pas pouvoir supprimer des utilisateurs / transaction / etc…).
+
+Pour cela, l'équipe de developpement à tout d'abord établie plusieurs cas d'utilisation. Au nombre de 3, dont voici un extrait :
+
+Préconditions
+
+* L’utilisateur est connecté.
+* L’utilisateur est dans l’onglet “Account”.
+
+Post-conditions
+
+* Le nouveau compte est enregistré.
+* Le compte est affiché dans la liste des comptes.
+
+Scénario principal
+
+1. L'utilisateur entre le nom dans le champ “Name”.
+2. L'utilisateur remplit ou non le champs “Description”, ce champ est facultatif.
+3. L'utilisateur appuie sur le bouton “Add Account”.
+4. Le système enregistre le compte avec les données entrées.
+5. Le système affiche le compte créé dans la liste de comptes.
+
+Scénarios alternatifs
+
+4.a) L'utilisateur n’a pas inscrit de nom dans le champ “Name”.
+
+1. Le système affiche un message d’erreur indiquant que le nom est obligatoire.
+2. Retour à l’étape 1.
+
+4.b) L'utilisateur inscrit un nom qui se trouve déjà dans la liste.
+
+1. Le système affiche un message d’erreur indiquant que le nom doit être unique.
+2. Retour à l’étape 1.
+
+
+
+== Maven
+
