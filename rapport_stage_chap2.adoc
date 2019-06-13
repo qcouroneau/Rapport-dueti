@@ -2,6 +2,8 @@
 
 Durant la seconde session, j'ai pu travailler sur un projet de maintenance informatique, grâce au cours LOG240 "Tests et maintenance".
 
+Je vais ici m'attarder sur ce que j'ai pu découvrir comme méthodes et outils de développement. Je ne vais pas pour autant négliger ce que j'ai déjà pu voir à l'IUT, mais je pense qu'il est plus pertinent de vous présenter ce que j'ai pu apprendre. 
+
 == Introduction
 
 La firme de consultation MaintenancePlus, qui est un spécialiste dans la maintenance et
@@ -28,11 +30,11 @@ Le but du projet est donc de reprendre cette application, et de l'améliorer pou
 
 == Demande client
 
-Le projet commence par une phase une demande client. Elle consiste à fournir une interface de
+Le projet commence par une phase une demande client. Il est ainsi demandé à l’équipe de développement d’apporter des modifications apportant de nouvelles  fonctionnalités à l’application. Ces modifications devant apporter “un système de droit d'accès au logiciel (login, mot de passe avec différent droit)”.
 
-Le sujet du laboratoire porte sur la documentation du logiciel FinanceJ, la demande de changement d’un client, l’implémentation de ce changement ainsi que l’amélioration de quelques classes qui posent présentement problème pour le bon fonctionnement de ce programme.
+== Conception
 
-Il est ainsi demandé à l’équipe de développement d’apporter des modifications apportant de nouvelles  fonctionnalités à l’application. Ces modifications devant apporter “un système de droit d'accès au logiciel (login, mot de passe avec différent droit)”.
+Tout d'abord l'équipe se porte sur la documentation du logiciel FinanceJ. La demande de changement du client, l’implémentation de ce changement ainsi que l’amélioration de quelques classes qui posent présentement problème pour le bon fonctionnement de ce programme.
 
 Trois fonctionnalités majeures ont donc été définies à partir de cette demande.
 
@@ -52,39 +54,45 @@ Limitation du logiciel en fonction des droits (partie non visible des modificati
 * Accès à certaines parties du logiciel en fonction des droits.
 * Accès à certaines fonctionnalités en fonction des droits (tout le monde ne doit pas pouvoir supprimer des utilisateurs / transaction / etc…).
 
-Pour cela, l'équipe de developpement à tout d'abord établie plusieurs cas d'utilisation. Au nombre de 3, dont voici un extrait :
+=== Cas d'utilisation
 
-Préconditions
+Pour cela, l'équipe de developpement à tout d'abord établie plusieurs cas d'utilisation. Ces cas d'utilisations vont permettre de définir les principales manière d'utiliser le logiciel. Grâce à cela il va être plus simple de définir comment parvenir à une bonne utilisation du logiciel et quelles seront les conséquences de cette utilisation. Ils comprenent chacuns quatres parties. 
 
-* L’utilisateur est connecté.
-* L’utilisateur est dans l’onglet “Account”.
+La prmière etant les preconditions, on regroupe ici toutes les conditions qui permettent à l'utilisateur d'effectue l'action voulue. 
 
-Post-conditions
+Exemple : pour ajouter un champ dans une base de données. Ici nous allons prendre l'exemple de l'ajout d'un compte dans la base. Compte qui comprend un nom et une description. L'utilisateur doit donc être connecté au logiciel et dans l'onglet d'ajout.
 
-* Le nouveau compte est enregistré.
-* Le compte est affiché dans la liste des comptes.
+La deuxième partie regroupe les post-conditions. Ici ce sont toutes les conditions qui permettent d'affirmer que l'utilisation voulue s'est bien déroulée. Par exemple, si l'on reprend l'exemple de l'ajout du compte dans la base, une post-condition serait qu'un nouveau compte a bien été ajouté dans la base.
 
-Scénario principal
+La troisième partie est composé du scénario principal. Celui-ci regoupe l'ensemble des actions utilisateur qui composent l'utilisation voulue. Toujours avec l'exemple de l'ajout du compte dans la base. On va par exemple s'attendre que l'utilisateur remplissent les champs comme le nom et la description, ou encore qu'il appuit sur le boutton d'ajout. 
 
-1. L'utilisateur entre le nom dans le champ “Name”.
-2. L'utilisateur remplit ou non le champs “Description”, ce champ est facultatif.
-3. L'utilisateur appuie sur le bouton “Add Account”.
-4. Le système enregistre le compte avec les données entrées.
-5. Le système affiche le compte créé dans la liste de comptes.
+Enfin la dernière partie regroupe les scénarios alternatifs. Comme pour le scénario principal c'est une suite d'actions qui composent une utilisation. Mais ici ce n'est pas l'utilisation principale de la fonction logiciel traitée. Généralement on regroupe ici les cas qui peuvent amener à une erreure (mais pas uniquement). Avec l'exemple de l'ajout du compte dans la base. Un scénario alternatifs serait de tenter d'ajouter un compte dans la base sans avoir renseigné le nom, ce qui va mener à message 
 
-Scénarios alternatifs
+=== Diagramme de séquence
 
-4.a) L'utilisateur n’a pas inscrit de nom dans le champ “Name”.
+Suite aux cas d'utilisation et surtout grâce au scenario principal, il va être assez simple de produire des diagrammes de séquence. Ceux-ci vont representer les interactions entre les acteurs et le système selon un ordre chronologique. 
 
-1. Le système affiche un message d’erreur indiquant que le nom est obligatoire.
-2. Retour à l’étape 1.
+// image du diag de sequence
 
-4.b) L'utilisateur inscrit un nom qui se trouve déjà dans la liste.
+Ici nous pouvont voir comment fonctionne l'ajout d'un champ dans la base (ici le champ Ledger). L'utilisateur appuit sur le bouton d'ajout correspondant à la classe en question. Celle-ci va communiquer avec la classe chargée de la communication de la base de donnees qui va enfin inserer le nouveau champ dans la base.
 
-1. Le système affiche un message d’erreur indiquant que le nom doit être unique.
-2. Retour à l’étape 1.
+== Test de boite noire
+
+Cette partie est prévue pour tester un programme en vérifiant que les sorties obtenues sont bien celles prévues pour des entrées données. 
+
+Pour cela, un tableau de classes d’équivalence pour chaque classe va être établi. Une classe d'équivalence 
+
+Les classes d'équivalence définissent l’ensemble des valeurs frontalières pour chaque variable de classe. Les valeurs frontalières sont les valeurs qui sont aux limites de la créations d'erreurs dans le logiciel. Par exemple si une variable ne peut dépasser 50 caractères, les valeurs frontalière sont 50 car jusque là il n'est pas censé avoir d'erreur. Et 51 car c'est à partir de là que le logiciel va produire une erreur (cet exemple est simplifié, il y a en général plus de valeurs frontalière par variable). 
+
+Grâce aux classes d’équivalence, des tableaux de tests seront établies. Ces tableaux permettront d’établir les tests qui seront implémentés en reprenant les valeurs frontalières des classes d’équivalence. À la suite de l’implémentation de ces tests, des problèmes fonctionnels vont être relevés sur FinanceJ. L’équipe va donc créer des tickets pour chacun de ces problèmes. 
+
+== Réingénierie dirigée par les tests
 
 
 
-== Maven
+== Développement 
+
+=== Trac
+
+=== Maven
 
