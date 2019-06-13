@@ -2,7 +2,7 @@
 
 Durant la seconde session, j'ai pu travailler sur un projet de maintenance informatique, grâce au cours LOG240 "Tests et maintenance".
 
-Je vais ici m'attarder sur ce que j'ai pu découvrir comme méthodes et outils de développement. Je ne vais pas pour autant négliger ce que j'ai déjà pu voir à l'IUT, mais je pense qu'il est plus pertinent de vous présenter ce que j'ai pu apprendre. 
+NOTE: Je vais ici m'attarder sur ce que j'ai pu découvrir comme méthodes et outils de conception et de développement. Je ne vais pas pour autant négliger ce que j'ai déjà pu voir à l'IUT, mais je pense qu'il est plus pertinent de vous présenter ce que j'ai pu apprendre.
 
 == Introduction
 
@@ -26,7 +26,6 @@ domaine.
 image:image/.jpg[width=450]
 
 Le but du projet est donc de reprendre cette application, et de l'améliorer pour l'enmener vers une version utilisable.
-
 
 == Demande client
 
@@ -72,27 +71,73 @@ Enfin la dernière partie regroupe les scénarios alternatifs. Comme pour le sc�
 
 Suite aux cas d'utilisation et surtout grâce au scenario principal, il va être assez simple de produire des diagrammes de séquence. Ceux-ci vont representer les interactions entre les acteurs et le système selon un ordre chronologique. 
 
-// image du diag de sequence
+.Diagramme de séquence de l'ajout d'un ajout dans la base
+image::image/diagSeq.png[Diagramme de séquence]
 
-Ici nous pouvont voir comment fonctionne l'ajout d'un champ dans la base (ici le champ Ledger). L'utilisateur appuit sur le bouton d'ajout correspondant à la classe en question. Celle-ci va communiquer avec la classe chargée de la communication de la base de donnees qui va enfin inserer le nouveau champ dans la base.
+Ici nous pouvont voir comment fonctionne l'ajout d'un champ dans la bases (ici le champ Ledger). L'utilisateur appuit sur le bouton d'ajout correspondant à la classe en question. Celle-ci va communiquer avec la classe chargée de la communication de la base de donnees qui va enfin inserer le nouveau champ dans la base.
 
 == Test de boite noire
 
-Cette partie est prévue pour tester un programme en vérifiant que les sorties obtenues sont bien celles prévues pour des entrées données. 
+Maintenant que toutes les modifications
+Les test de boite noire sont prévue pour tester un programme en vérifiant que les sorties obtenues sont bien celles prévues pour des entrées données.
 
-Pour cela, un tableau de classes d’équivalence pour chaque classe va être établi. Une classe d'équivalence 
+=== Valeurs frontalières
 
-Les classes d'équivalence définissent l’ensemble des valeurs frontalières pour chaque variable de classe. Les valeurs frontalières sont les valeurs qui sont aux limites de la créations d'erreurs dans le logiciel. Par exemple si une variable ne peut dépasser 50 caractères, les valeurs frontalière sont 50 car jusque là il n'est pas censé avoir d'erreur. Et 51 car c'est à partir de là que le logiciel va produire une erreur (cet exemple est simplifié, il y a en général plus de valeurs frontalière par variable). 
+Avant de commencer la conception des tests, nous allons d'abord définir les "valeurs frontalières".
 
-Grâce aux classes d’équivalence, des tableaux de tests seront établies. Ces tableaux permettront d’établir les tests qui seront implémentés en reprenant les valeurs frontalières des classes d’équivalence. À la suite de l’implémentation de ces tests, des problèmes fonctionnels vont être relevés sur FinanceJ. L’équipe va donc créer des tickets pour chacun de ces problèmes. 
+Ces valeurs frontalières sont les valeurs qui sont aux limites de la créations d'erreurs dans le logiciel. Par exemple si une variable ne peut dépasser 50 caractères, les valeurs frontalière sont 50 car jusque là il n'est pas censé avoir d'erreur. Et 51 car c'est à partir de là que le logiciel va produire une erreur (cet exemple est simplifié, il y a en général plus de valeurs frontalière par variable).
+
+=== Classes d'équivalence
+
+Une fois toutes les valeurs frontalières définit, nous produisont un tableau de classes d’équivalence. Le but d'une classe d'équivalence est de prendre une valeur frontalière définit plus tôt et de lui attribuer une validité ou non. C'est-à-dire, pour tel valeur de la variable est-ce-que la fonction va réussir à effectuer ce pourquoi elle programmée.
+
+Le tableau de classes d'équivalence va donc permettre de définir une validité (ou non) pour chacune des valeurs frontalières.
+
+.Extrait d'une classe d'équivalence
+image::image/classeEqui.png[Diagramme de classe]
+
+Nous pouvons voir, de gauche à droite :
+
+* le nom de la variable concerné.
+* Une description de cette variable.
+* L'identificateur que l'on donne à cette classe d'équivalence.
+* La valeur frontalière concerné.
+* La validité du programme avec cette valeur.
+* Une description permettant de comprendre la validité ou non de cette classe d'équivalence.
+
+=== Cas de tests
+
+Grâce aux classes d’équivalence, des tableaux de tests seront établies. Ces tableaux permettront d’établir les tests qui seront implémentés en reprenant les valeurs frontalières des classes d’équivalence. Voici un extrait d'un tableau de test :
+
+.Extrait d'un tableau de cas de test
+image::image/casDeTest.png[Cas de test]
+
+Nous pouvons voir, de gauche à droite :
+
+* Le nom du test
+* Les préconditions pour effectuer le test
+* Les post-conditions permettant de définir si le test s'est bien déroulé
+* Les entrées des variables (ici on veut qu'à l'entrée de la fonction, la variable "Name" ai plus de 50 caractères)
+* L'identificateur de la classes d'équivalence définit plutôt. On met ici toutes les classes d'équivalence valides, c'est-à-dire celle qui ne produisent pas d'erreur. Dans ce cas, nous avons au moins 1 caractère alphanumérique (EC1), une longueur plus petite ou égale à 50 (EC2), etc...
+* L'identificateur de la classes d'équivalence définit plutôt. On met ici toutes les classes d'équivalence invalides, c'est-à-dire celle qui produisent des erreur (cette colonne peut être vide si le test à pour but de ne pas produire d'erreur). Dans notre cas, nous avons une longueur plus longue que 50 (EC4), ce qui va produire une erreur.
+* La sortie système obtenue. Ici c'est ce que le logiciel va retourner à l'utilisateur dans le terminal.
+* Une description permettant d'expliquer le déroulement du test
+
+Le but de ces cas de tests est de couvrir toutes les classes d'équivalence invalides pour être sûr de tester toutes les cas d'erreur possible (ou au moins ceux definit par l'équipe) tout en evitant la redondance. Une fois toutes les classes d'équivance invalide traitées, il ne reste plus qu'à les implémenter.
 
 == Réingénierie dirigée par les tests
 
 
 
-== Développement 
+== Développement
+
+
+
+NOTE: En ce qui concerne la chronologie du projet, la phase de developpement n'a pas debutee après la phase de conception prsenté plus tôt. Elle était en réalité faite en parrallèle. Cependant elle comprenait des parties de developpement mineurs qui non pas necessite de la conception. Comme de la correction ou de l'optimisation de code. C'est pendant ces phases de developpement mineur que nous avons travaillé sur la conception. Je vais donc ici m'attarder sur les points centraux
 
 === Trac
+
+
 
 === Maven
 
