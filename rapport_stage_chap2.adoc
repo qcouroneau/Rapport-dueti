@@ -131,13 +131,11 @@ Le but de ces cas de tests est de couvrir toutes les classes d'équivalence inva
 
 == Développement
 
-
-
-NOTE: En ce qui concerne la chronologie du projet, la phase de developpement n'a pas debutee après la phase de conception prsenté plus tôt. Elle était en réalité faite en parrallèle. Cependant elle comprenait des parties de developpement mineurs qui non pas necessite de la conception. Comme de la correction ou de l'optimisation de code. C'est pendant ces phases de developpement mineur que nous avons travaillé sur la conception. Je vais donc ici m'attarder sur les points centraux
+NOTE: En ce qui concerne la chronologie du projet, la phase de developpement n'a pas debutee après la phase de conception prsenté plus tôt. Elle était en réalité faite en parrallèle. Cependant elle comprenait des parties de developpement mineurs qui non pas necessite de la conception. Comme de la correction ou de l'optimisation de code. C'est pendant ces phases de developpement mineur que nous avons travaillé sur la conception. Je vais donc ici m'attarder sur les points centraux du developpement.
 
 === Trac
 
-
+Tout d'abord, 
 
 === Maven
 
