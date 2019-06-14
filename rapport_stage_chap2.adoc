@@ -131,11 +131,66 @@ Le but de ces cas de tests est de couvrir toutes les classes d'équivalence inva
 
 == Développement
 
+Nous allons ici nous attarder sur les principaux outils de developpement utilises. Nous verrons ensuite les resultats de la phase de programmation. La programmation en elle même n'etant pas très interessante (programmation classqiue en java EE). 
+
 NOTE: En ce qui concerne la chronologie du projet, la phase de developpement n'a pas debutee après la phase de conception prsenté plus tôt. Elle était en réalité faite en parrallèle. Cependant elle comprenait des parties de developpement mineurs qui non pas necessite de la conception. Comme de la correction ou de l'optimisation de code. C'est pendant ces phases de developpement mineur que nous avons travaillé sur la conception. Je vais donc ici m'attarder sur les points centraux du developpement.
 
 === Trac
 
-Tout d'abord, 
+Avant de se lancer dans la programmation, nous avons mis en place un service Trac. 
+
+Trac est un wiki amélioré et un système de suivi des problèmes pour les projets de développement logiciel. Il fournit une interface à Git (ou d’autres systèmes de contrôle de version), un wiki intégré et des fonctions de rapport pratiques. Trac permet de baliser le wiki dans les descriptions de problème et de valider des messages, en créant des liens et des références transparentes entre les bogues, les tâches, les ensembles de modifications, les fichiers et les pages wiki. Une chronologie affiche dans l'ordre tous les événements de projet actuels et passés, ce qui facilite l'acquisition d'une vue d'ensemble du projet et le suivi de ses progrès. La feuille de route indique la voie à suivre, en énumérant les jalons à venir.
+
+Trac permet aussi de mettre au point des "tickets" : ce sont des representation des tâches à effectuer.
+
+// trac billet
+
+On peut ainsi nottament y voir : la ou les personnes assignes à cette tâche, la priorité de la tâche ou encore le jalon auquel le ticket appartient. 
+
+Dans ce projet, Trac va servir de plateforme principale pour tout ce qui tourne autour de la programmation :
+
+* Elle va regrouper une partie de la documentation. C'est par exemple tout ce qui touche à la conception ou au fonctionnement du logiciel. 
+* Elle permet de revoyer vers le git du projet, mais aussi vers les rapport PMD (que nous allons voir juste après).
+* Elle regroupe les tickets en cours et ceux realises 
+
+Une fois cet outil mit en place, nous nous sommes tournes vers la mise en place de QALab.
+
+=== QALab
+
+QALab est un plugin de Maven, il permet de genrer de la documentation 
+
+Nous avons avant tout utilises deux outils de QALab :
+
+*Checkstyle* : qui permet une validation du style de code et une vérification de la conception. 
+
+// image Checkstyle
+
+Ceci est le résultat d’une session de correctifs d’erreurs décelées par Checkstyle. Chacune de ces classes
+présentait un certain nombre d’erreurs, elles sont présentes dans la colonne Previous Value. On peut
+ensuite voir que pour la version actuelle du projet, ici celle du 25 janvier 2019, le nombre d’erreurs à
+baisser. Le nouveau nombre d’erreurs est situé dans la classe Current Value. Nous avons donc sept
+classes java qui ont perdu au moins une erreur chacune dans leur code.
+
+*PMD* : Vérification du code (bugs possibles, code mort, code sous-optimal, etc.).
+
+// image PMD
+
+Même explication ici, dans la partie Up by, nous pouvons voir les classes qui comportent des erreurs dans
+leur code, mais qui n’ont pas été modifiées lors de la précédente mise à jour du projet.
+Dans la partie Down by, nous pouvons voir que les correctifs de la dernière mise à jour se sont concentrés
+sur des erreurs repérées par PMD dans la classe DBUtils.java. En effet, lors de la précédente version du
+projet, le nombre d’erreurs (Previous Run) était de 19. Après les correctifs apportés par la dernière
+version du projet, le nombre d’erreurs est passé à 7 (Current Value).
+
+Pour chacun de ces deux outils, QALab va generer des diagrammes permettant de voir l'etat actuel du projet. Que ce soit le nombre d'erreur actuel, mais aussi le nombre d'erreur dans les version precedentes du projet. 
+
+// image QALab 
+
+Ici, nous pouvons voir les différentes sessions de corrections d’erreurs. Tout d’abord, le code possédait
+1524 erreurs détectées par _Checkstyle_, ainsi que 131 erreurs détectées par _PMD_. Après la première session
+de correctifs que nous avons apportés, les erreurs de type _CheckStyle_ sont passé de 1524 à 1512. Nous
+avons ensuite corrigé des erreurs soulevées par _PMD_, elles sont ainsi passées de 131 à 119, on peut
+cependant noter qu’une nouvelle erreur a été détectée par _Checkstyle_.
 
 === Maven
 
