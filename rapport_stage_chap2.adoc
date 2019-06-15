@@ -165,24 +165,14 @@ Nous avons avant tout utilises deux outils de QALab :
 
 // image Checkstyle
 
-Ceci est le résultat d’une session de correctifs d’erreurs décelées par Checkstyle. Chacune de ces classes
-présentait un certain nombre d’erreurs, elles sont présentes dans la colonne Previous Value. On peut
-ensuite voir que pour la version actuelle du projet, ici celle du 25 janvier 2019, le nombre d’erreurs à
-baisser. Le nouveau nombre d’erreurs est situé dans la classe Current Value. Nous avons donc sept
-classes java qui ont perdu au moins une erreur chacune dans leur code.
-
+Ceci est le résultat d’une session de correctifs d’erreurs décelées par Checkstyle. Chacune de ces classes présentait un certain nombre d’erreurs, elles sont présentes dans la colonne Previous Value. On peut ensuite voir que pour la version actuelle du projet, ici celle du 25 janvier 2019, le nombre d’erreurs à baisser. Le nouveau nombre d’erreurs est situé dans la classe Current Value. Nous avons donc sept classes Java qui ont perdu au moins une erreur chacune dans leur code.
 *PMD* : Vérification du code (bugs possibles, code mort, code sous-optimal, etc.).
 
 // image PMD
 
-Même explication ici, dans la partie Up by, nous pouvons voir les classes qui comportent des erreurs dans
-leur code, mais qui n’ont pas été modifiées lors de la précédente mise à jour du projet.
-Dans la partie Down by, nous pouvons voir que les correctifs de la dernière mise à jour se sont concentrés
-sur des erreurs repérées par PMD dans la classe DBUtils.java. En effet, lors de la précédente version du
-projet, le nombre d’erreurs (Previous Run) était de 19. Après les correctifs apportés par la dernière
-version du projet, le nombre d’erreurs est passé à 7 (Current Value).
+Même explication ici, dans la partie Up by, nous pouvons voir les classes qui comportent des erreurs dans leur code, mais qui n’ont pas été modifiées lors de la précédente mise à jour du projet. Dans la partie Down by, nous pouvons voir que les correctifs de la dernière mise à jour se sont concentrés sur des erreurs repérées par PMD dans la classe DBUtils.java. En effet, lors de la précédente version du projet, le nombre d’erreurs (Previous Run) était de 19. Après les correctifs apportés par la dernière version du projet, le nombre d’erreurs est passé à 7 (Current Value).
 
-Pour chacun de ces deux outils, QALab va generer des diagrammes permettant de voir l'etat actuel du projet. Que ce soit le nombre d'erreur actuel, mais aussi le nombre d'erreur dans les version precedentes du projet. 
+Pour chacun de ces deux outils, QALab va générer des diagrammes permettant de voir l'état actuel du projet. Que ce soit le nombre d'erreurs actuel, mais aussi le nombre d'erreurs dans les versions précédentes du projet. 
 
 // image QALab 
 
