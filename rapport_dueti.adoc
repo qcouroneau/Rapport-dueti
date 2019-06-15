@@ -17,8 +17,6 @@ include::page_blanche.adoc[leveloffset=+1]
 <<<
 include::rapport_stage_table_des_matieres.adoc[leveloffset=+1]
 <<<
-include::rapport_stage_liste_des_figures.adoc[leveloffset=+1]
-<<<
 include::rapport_stage_introduction.adoc[leveloffset=+1]
 <<<
 
@@ -35,6 +33,3 @@ include::rapport_stage_chap3.adoc[leveloffset=+1]
 
 include::rapport_stage_conclusion.adoc[leveloffset=+1]
 <<<
-include::rapport_stage_annexes.adoc[leveloffset=+1]
-<<<
-include::rapport_stage_lexique.adoc[leveloffset=+1]
