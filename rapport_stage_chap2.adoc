@@ -6,36 +6,30 @@ NOTE: Je vais ici m'attarder sur ce que j'ai pu découvrir comme méthodes et ou
 
 == Introduction
 
-La firme de consultation MaintenancePlus, qui est un spécialiste dans la maintenance et
-le test de logiciels, vient d’assigner à mon équipe son premier contrat de travail.
-La situation de l’entreprise BudgetPersonnel2000, pour laquelle MaintenancePlus
-requiert vos services, est la suivante :
+La firme de consultation MaintenancePlus, qui est un spécialiste dans la maintenance et le test de logiciels, vient d’assigner à mon équipe son premier contrat de travail. La situation de l’entreprise BudgetPersonnel2000, pour laquelle MaintenancePlus requiert vos services, est la suivante :
 
 * BudgetPersonnel2000 est une entreprise qui vend des services à des particuliers afin de les aider à gérer leur budget
 * Il y a un an, l’un de ses gestionnaires a eu l’idée de développer un logiciel que l’entreprise pourrait vendre à ses clients pendant les rencontres, afin de générer plus de bénéfices
 * Une tierce personne à donc été embauchée par BudgetPersonnel2000 pour développer et assurer la maintenance de son logiciel, qu’elle a dénommé FinanceJ.
 * Ayant trouvé un autre emploi, cette tierce personne vient de quitter son poste à BudgetPersonnel2000 qui se presse alors de recueillir les services de la firme MaintenancePlus pour assurer désormais la maintenance de FinanceJ.
 
-L’état du logiciel FinanceJ n’est pas reluisant. Ses utilisateurs trouvent qu’il n’est pas assez
-convivial, qu’il exécute des opérations qui peuvent briser l’intégrité de la base de
-données, et que certaines de ses fonctionnalités ne s’exécutent même pas. Votre équipe
-a donc la mission de le prendre en charge le logiciel dans un environnement de
-maintenance réel pour pouvoir l’améliorer, conformément aux normes qui régissent le
-domaine.
+L’état du logiciel FinanceJ n’est pas reluisant. Ses utilisateurs trouvent qu’il n’est pas assez convivial, qu’il exécute des opérations qui peuvent briser l’intégrité de la base de données, et que certaines de ses fonctionnalités ne s’exécutent même pas. L'équipe de développement a donc la mission de prendre en charge le logiciel dans un environnement de maintenance réel pour pouvoir l’améliorer, conformément aux normes qui régissent le domaine.
 
 image:image/.jpg[width=450]
 
-Le but du projet est donc de reprendre cette application, et de l'améliorer pour l'enmener vers une version utilisable.
+Le but du projet est donc de reprendre cette application, et de l'améliorer pour l'emmener vers une version utilisable.
+
+Pour cela, une grande phase de conception est nécessaire. Avec dans l'ordre : l'analyse de la demande client. Une conception des cas d'utilisation qui en découlent. La conception des tests à implémenter pour définir si les modifications sont bonnes. Et enfin le développement qui commencera par la mise en place d'outils Maven, puis par l'implémentation en Java EE.
 
 == Demande client
 
 Le projet commence par une phase une demande client. Il est ainsi demandé à l’équipe de développement d’apporter des modifications apportant de nouvelles  fonctionnalités à l’application. Ces modifications devant apporter “un système de droit d'accès au logiciel (login, mot de passe avec différent droit)”.
 
+En effet, lorsque le programme est exécuté, l'application se lance directement. Il n'y a aucune sécurité, et tous les employés de l'entreprise ont les mêmes droits dessus. Cela doit donc changer, avec une connexion sécurisée qui permettra de limiter les droits en fonctions des employés. 
+
 == Conception
 
-Tout d'abord l'équipe se porte sur la documentation du logiciel FinanceJ. La demande de changement du client, l’implémentation de ce changement ainsi que l’amélioration de quelques classes qui posent présentement problème pour le bon fonctionnement de ce programme.
-
-Trois fonctionnalités majeures ont donc été définies à partir de cette demande.
+Maintenant que la demande du client a été explicité. Nous nous sommes tourné vers l'analyse de celle-ci. La demande est assez simple à première vu, mais elle entraîne plusieurs modifications du fonctionnement du logiciel. Nous avons donc travaillé dessus et nous sommes arrivés à la conclusion que cette demande comprends trois fonctionnalités sous-jacentes. Et chacune de ces fonctionnalités comprend des sous-fonctionnalités. Les vois-ci : 
 
 Un système d’authentification (fenêtre prévue à cet effet) comprenant :
 
@@ -53,23 +47,27 @@ Limitation du logiciel en fonction des droits (partie non visible des modificati
 * Accès à certaines parties du logiciel en fonction des droits.
 * Accès à certaines fonctionnalités en fonction des droits (tout le monde ne doit pas pouvoir supprimer des utilisateurs / transaction / etc…).
 
+Maintenant que les fonctionnalités majeurs à ajouter dans le programme ont été définies, tournons nous vers les nouvelles manières d'utiliser le logiciel lorsque que les ajouts auront été implémenté. 
+
 === Cas d'utilisation
 
-Pour cela, l'équipe de developpement à tout d'abord établie plusieurs cas d'utilisation. Ces cas d'utilisations vont permettre de définir les principales manière d'utiliser le logiciel. Grâce à cela il va être plus simple de définir comment parvenir à une bonne utilisation du logiciel et quelles seront les conséquences de cette utilisation. Ils comprenent chacuns quatres parties. 
+Pour cela, l'équipe de développement à tout d'abord établie plusieurs cas d'utilisation. Ces cas d'utilisations vont permettre de définir les principales manières d'utiliser le logiciel.Pour cela, l'équipe de développement à tout d'abord établie plusieurs cas d'utilisation. Ils contiennent chacun quatre parties. 
 
-La prmière etant les preconditions, on regroupe ici toutes les conditions qui permettent à l'utilisateur d'effectue l'action voulue. 
+La première etant les preconditions, on regroupe ici toutes les conditions qui permettent à l'utilisateur d'effectue l'action voulue. 
 
-Exemple : pour ajouter un champ dans une base de données. Ici nous allons prendre l'exemple de l'ajout d'un compte dans la base. Compte qui comprend un nom et une description. L'utilisateur doit donc être connecté au logiciel et dans l'onglet d'ajout.
+Exemple : pour ajouter un champ dans une base de données. Ici, nous allons prendre l'exemple de l'ajout d'un compte dans la base. Compte qui comprend un nom et une description. L'utilisateur doit donc être connecté au logiciel et dans l'onglet d'ajout.
 
 La deuxième partie regroupe les post-conditions. Ici ce sont toutes les conditions qui permettent d'affirmer que l'utilisation voulue s'est bien déroulée. Par exemple, si l'on reprend l'exemple de l'ajout du compte dans la base, une post-condition serait qu'un nouveau compte a bien été ajouté dans la base.
 
-La troisième partie est composé du scénario principal. Celui-ci regoupe l'ensemble des actions utilisateur qui composent l'utilisation voulue. Toujours avec l'exemple de l'ajout du compte dans la base. On va par exemple s'attendre que l'utilisateur remplissent les champs comme le nom et la description, ou encore qu'il appuit sur le boutton d'ajout. 
+La troisième partie est composée du scénario principal. Celui-ci regroupe l'ensemble des actions utilisateur qui compose l'utilisation voulue. Toujours avec l'exemple de l'ajout du compte dans la base. On va par exemple s'attendre que l'utilisateur remplissent les champs comme le nom et la description, ou encore qu'il appui sur le bouton d'ajout. 
 
-Enfin la dernière partie regroupe les scénarios alternatifs. Comme pour le scénario principal c'est une suite d'actions qui composent une utilisation. Mais ici ce n'est pas l'utilisation principale de la fonction logiciel traitée. Généralement on regroupe ici les cas qui peuvent amener à une erreure (mais pas uniquement). Avec l'exemple de l'ajout du compte dans la base. Un scénario alternatifs serait de tenter d'ajouter un compte dans la base sans avoir renseigné le nom, ce qui va mener à message 
+Enfin, la dernière partie regroupe les scénarios alternatifs. Comme pour le scénario principal, c'est une suite d'actions qui composent une utilisation. Mais ici, ce n'est pas l'utilisation principale de la fonction logicielle traitée. Généralement, on regroupe ici les cas qui peuvent amener à une erreur (mais pas uniquement). Avec l'exemple de l'ajout du compte dans la base. Un scénario alternatif serait de tenter d'ajouter un compte dans la base sans avoir renseigné le nom, ce qui va mener à message. 
+
+Maintenant que la defeinition des cas d'utilisation est clair, voici un extrait de nos cas d'utilisation. Il présentent une nouvelle fonctionnalité 
 
 === Diagramme de séquence
 
-Suite aux cas d'utilisation et surtout grâce au scenario principal, il va être assez simple de produire des diagrammes de séquence. Ceux-ci vont representer les interactions entre les acteurs et le système selon un ordre chronologique. 
+Suite aux cas d'utilisation et surtout grâce au scénario principal, il va être assez simple de produire des diagrammes de séquence. Ceux-ci vont représenter les interactions entre les acteurs et le système selon un ordre chronologique. 
 
 .Diagramme de séquence de l'ajout d'un ajout dans la base
 image::image/diagSeq.png[Diagramme de séquence]
