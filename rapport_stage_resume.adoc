@@ -1,7 +1,11 @@
 [discrete]
-= Résumé
+= Summary
 
-[discrete]
-= Abstract
+After three years at the University Institute of Technology, I signed up for an internation exchange. As part of a University Diploma in International Technology Studies. This year was held in Montreal I Quebec, province of Canada for a period of eight months. Year in which I validated 48 ects.
 
+In this report, we will at first see the steps to take to get there. Seeing course registrations and their validations. Then we will see how I found my home and the characteristics of this one. 
+
+Next, I will introduce you the biggest computer science project I did during this year. Presenting the project design, test conception and the development. 
+
+Finally, I will make a review of what it has brought me. The cultural enrichment I experienced with University and Everyday Life. 
 
