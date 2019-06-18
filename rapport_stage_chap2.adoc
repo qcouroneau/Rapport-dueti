@@ -63,7 +63,11 @@ La troisième partie est composée du scénario principal. Celui-ci regroupe l'e
 
 Enfin, la dernière partie regroupe les scénarios alternatifs. Comme pour le scénario principal, c'est une suite d'actions qui composent une utilisation. Mais ici, ce n'est pas l'utilisation principale de la fonction logicielle traitée. Généralement, on regroupe ici les cas qui peuvent amener à une erreur (mais pas uniquement). Avec l'exemple de l'ajout du compte dans la base. Un scénario alternatif serait de tenter d'ajouter un compte dans la base sans avoir renseigné le nom, ce qui va mener à message. 
 
-Maintenant que la defeinition des cas d'utilisation est clair, voici un extrait de nos cas d'utilisation. Il présentent une nouvelle fonctionnalité 
+Voici maintenant un extrait de ces cas d'utilisation (voir annexe 1). Il y décrit l'utilisation du logiciel menant à l'ajout d'un nouvel utilisateur dans la base de donné. 
+
+Le nombre de cas d'utilisation que nous avons conçus est de 3.
+
+Maintenant que la définition des cas d'utilisation est clair, voici un extrait de nos cas d'utilisation. Ils présentent une nouvelle fonctionnalité. 
 
 === Diagramme de séquence
 
@@ -72,22 +76,29 @@ Suite aux cas d'utilisation et surtout grâce au scénario principal, il va êtr
 .Diagramme de séquence de l'ajout d'un ajout dans la base
 image::image/diagSeq.png[Diagramme de séquence]
 
-Ici nous pouvont voir comment fonctionne l'ajout d'un champ dans la bases (ici le champ Ledger). L'utilisateur appuit sur le bouton d'ajout correspondant à la classe en question. Celle-ci va communiquer avec la classe chargée de la communication de la base de donnees qui va enfin inserer le nouveau champ dans la base.
+Ici, nous pouvons voir comment fonctionne l'ajout d'un champ dans la base (ici le champ Ledger). L'utilisateur appui sur le bouton d'ajout correspondant à la classe en question. Celle-ci va communiquer avec la classe chargée de la communication de la base de données qui va enfin insérer le nouveau champ dans la base.
 
 == Test de boite noire
 
-Maintenant que toutes les modifications
-Les test de boite noire sont prévue pour tester un programme en vérifiant que les sorties obtenues sont bien celles prévues pour des entrées données.
+Maintenant que toutes les modifications on été définies. Que nous connaissons les fonctionnalités qui en découlent. Et que nous connaissons les modules/classes concernés par les modifications. À débuté la phase de conception des tests. 
+
+Pour ce faire, nous avons mis en place la technique de "test de boite noire". Les tests en « boite noire » consistent à examiner uniquement les fonctionnalités d’une application, c’est-à-dire si elle fait ce qu’elle est censée faire, peu importe comment elle le fait. Sa structure et son fonctionnement interne ne sont pas étudiés. Le testeur doit donc savoir quel est le rôle du système et de ses fonctionnalités, mais ignore ses mécanismes internes. Il a un profil uniquement « utilisateur ».
+
+Ainsi, cette méthode sert à vérifier, après la finalisation d’un projet, si un logiciel ou une application fonctionne bien et sert efficacement ses utilisateurs. Ce qui est cohérent par le fait que le logiciel initial est déjà fonctionnel, et que de nombreuses fonctions ne seront pas modifiés lors du développement.
+
+Nous avond donc prévus de tester un programme en vérifiant que les sorties obtenues sont bien celles prévues pour des entrées données. Pour cela nous avons isolés les variables critiques, celles qui pour certaines paramètres provoquent des erreurs. Ces valeurs provoquant des erreurs sont les "valeurs frontières".  
 
 === Valeurs frontalières
 
-Avant de commencer la conception des tests, nous allons d'abord définir les "valeurs frontalières".
+Ces valeurs frontalières sont les valeurs qui sont aux limites de la création d'erreurs dans le logiciel. Par exemple, si une variable ne peut dépasser 50 caractères, les valeurs frontalières sont : 50 car jusque-là, il n'est pas censé avoir d'erreur. Et 51 car c'est à partir de là que le logiciel va produire une erreur (cet exemple est simplifié, il y a en général plus de valeurs frontalière par variable).
 
-Ces valeurs frontalières sont les valeurs qui sont aux limites de la créations d'erreurs dans le logiciel. Par exemple si une variable ne peut dépasser 50 caractères, les valeurs frontalière sont 50 car jusque là il n'est pas censé avoir d'erreur. Et 51 car c'est à partir de là que le logiciel va produire une erreur (cet exemple est simplifié, il y a en général plus de valeurs frontalière par variable).
+// Extrait valeurs front
+
+Voici les valeurs frontalières pour une des classes du programme. On peut y voir toutes les valeurs menant à des erreurs. Mais aussi les valeurs à la limite de ces erreurs.
 
 === Classes d'équivalence
 
-Une fois toutes les valeurs frontalières définit, nous produisont un tableau de classes d’équivalence. Le but d'une classe d'équivalence est de prendre une valeur frontalière définit plus tôt et de lui attribuer une validité ou non. C'est-à-dire, pour tel valeur de la variable est-ce-que la fonction va réussir à effectuer ce pourquoi elle programmée.
+Une fois toutes les valeurs frontalières définies. Nous avons produit un tableau de classes d’équivalence. Le but d'une classe d'équivalence est de prendre une valeur frontalière défini plus tôt et de lui attribuer une validité ou non. C'est-à-dire, pour telle valeur de la variable est ce que la fonction va réussir à effectuer ce pourquoi elle programmée. (a completer)
 
 Le tableau de classes d'équivalence va donc permettre de définir une validité (ou non) pour chacune des valeurs frontalières.
 
@@ -105,7 +116,7 @@ Nous pouvons voir, de gauche à droite :
 
 === Cas de tests
 
-Grâce aux classes d’équivalence, des tableaux de tests seront établies. Ces tableaux permettront d’établir les tests qui seront implémentés en reprenant les valeurs frontalières des classes d’équivalence. Voici un extrait d'un tableau de test :
+Grâce aux classes d’équivalence, des tableaux de tests seront établis. Ces tableaux permettront d’établir les tests qui seront implémentés en reprenant les valeurs frontalières des classes d’équivalence. Voici un extrait d'un tableau de test :
 
 .Extrait d'un tableau de cas de test
 image::image/casDeTest.png[Cas de test]
@@ -121,7 +132,7 @@ Nous pouvons voir, de gauche à droite :
 * La sortie système obtenue. Ici c'est ce que le logiciel va retourner à l'utilisateur dans le terminal.
 * Une description permettant d'expliquer le déroulement du test
 
-Le but de ces cas de tests est de couvrir toutes les classes d'équivalence invalides pour être sûr de tester toutes les cas d'erreur possible (ou au moins ceux definit par l'équipe) tout en evitant la redondance. Une fois toutes les classes d'équivance invalide traitées, il ne reste plus qu'à les implémenter.
+Le but de ces cas de tests est de couvrir toutes les classes d'équivalence invalides pour être sûr de tester tous les cas d'erreur possible (ou au moins ceux définît par l'équipe) tout en évitant la redondance. Une fois, toutes les classes d'équivalence invalide traitées, il ne reste plus qu'à les implémenter.
 
 == Réingénierie dirigée par les tests
 
@@ -129,9 +140,9 @@ Le but de ces cas de tests est de couvrir toutes les classes d'équivalence inva
 
 == Développement
 
-Nous allons ici nous attarder sur les principaux outils de developpement utilises. Nous verrons ensuite les resultats de la phase de programmation. La programmation en elle même n'etant pas très interessante (programmation classqiue en java EE). 
+Nous allons ici nous attarder sur les principaux outils de développement utilises. Nous verrons ensuite les résultats de la phase de programmation. La programmation en elle-même n'étant pas très intéressante (programmation classqiue en java EE). 
 
-NOTE: En ce qui concerne la chronologie du projet, la phase de developpement n'a pas debutee après la phase de conception prsenté plus tôt. Elle était en réalité faite en parrallèle. Cependant elle comprenait des parties de developpement mineurs qui non pas necessite de la conception. Comme de la correction ou de l'optimisation de code. C'est pendant ces phases de developpement mineur que nous avons travaillé sur la conception. Je vais donc ici m'attarder sur les points centraux du developpement.
+NOTE: En ce qui concerne la chronologie du projet, la phase de développement n'a pas débuté après la phase de conception présentée plus tôt. Elle était en réalité faite en parallèle. Cependant, elle comprenait des parties de développement mineurs qui non pas nécessité de phase de conception. Comme de la correction ou de l'optimisation de code. C'est pendant ces phases de développement mineur que nous avons travaillé sur la conception. Je vais donc ici m'attarder sur les points centraux du développement.
 
 === Trac
 
@@ -139,11 +150,11 @@ Avant de se lancer dans la programmation, nous avons mis en place un service Tra
 
 Trac est un wiki amélioré et un système de suivi des problèmes pour les projets de développement logiciel. Il fournit une interface à Git (ou d’autres systèmes de contrôle de version), un wiki intégré et des fonctions de rapport pratiques. Trac permet de baliser le wiki dans les descriptions de problème et de valider des messages, en créant des liens et des références transparentes entre les bogues, les tâches, les ensembles de modifications, les fichiers et les pages wiki. Une chronologie affiche dans l'ordre tous les événements de projet actuels et passés, ce qui facilite l'acquisition d'une vue d'ensemble du projet et le suivi de ses progrès. La feuille de route indique la voie à suivre, en énumérant les jalons à venir.
 
-Trac permet aussi de mettre au point des "tickets" : ce sont des representation des tâches à effectuer.
+Trac permet aussi de mettre au point des "tickets" : ce sont des représentation des tâches à effectuer.
 
 // trac billet
 
-On peut ainsi nottament y voir : la ou les personnes assignes à cette tâche, la priorité de la tâche ou encore le jalon auquel le ticket appartient. 
+On peut ainsi notamment y voir : la ou les personnes assignées à cette tâche, la priorité de la tâche ou encore le jalon auquel le ticket appartient. 
 
 Dans ce projet, Trac va servir de plateforme principale pour tout ce qui tourne autour de la programmation :
 
@@ -155,15 +166,16 @@ Une fois cet outil mit en place, nous nous sommes tournes vers la mise en place 
 
 === QALab
 
-QALab est un plugin de Maven, il permet de genrer de la documentation 
+QALab est un plugin de Maven, il permet de générer de la documentation. 
 
-Nous avons avant tout utilises deux outils de QALab :
+Nous avons avant tout utilisé deux outils de QALab :
 
 *Checkstyle* : qui permet une validation du style de code et une vérification de la conception. 
 
 // image Checkstyle
 
 Ceci est le résultat d’une session de correctifs d’erreurs décelées par Checkstyle. Chacune de ces classes présentait un certain nombre d’erreurs, elles sont présentes dans la colonne Previous Value. On peut ensuite voir que pour la version actuelle du projet, ici celle du 25 janvier 2019, le nombre d’erreurs à baisser. Le nouveau nombre d’erreurs est situé dans la classe Current Value. Nous avons donc sept classes Java qui ont perdu au moins une erreur chacune dans leur code.
+
 *PMD* : Vérification du code (bugs possibles, code mort, code sous-optimal, etc.).
 
 // image PMD
@@ -174,11 +186,7 @@ Pour chacun de ces deux outils, QALab va générer des diagrammes permettant de 
 
 // image QALab 
 
-Ici, nous pouvons voir les différentes sessions de corrections d’erreurs. Tout d’abord, le code possédait
-1524 erreurs détectées par _Checkstyle_, ainsi que 131 erreurs détectées par _PMD_. Après la première session
-de correctifs que nous avons apportés, les erreurs de type _CheckStyle_ sont passé de 1524 à 1512. Nous
-avons ensuite corrigé des erreurs soulevées par _PMD_, elles sont ainsi passées de 131 à 119, on peut
-cependant noter qu’une nouvelle erreur a été détectée par _Checkstyle_.
+Ici, nous pouvons voir les différentes sessions de corrections d’erreurs. Tout d’abord, le code possédait 1524 erreurs détectées par _Checkstyle_, ainsi que 131 erreurs détectées par _PMD_. Après la première session de correctifs que nous avons apportés, les erreurs de type _CheckStyle_ sont passé de 1524 à 1512. Nous avons ensuite corrigé des erreurs soulevées par _PMD_, elles sont ainsi passées de 131 à 119, on peut cependant noter qu’une nouvelle erreur a été détectée par _Checkstyle_.
 
 === Maven
 
