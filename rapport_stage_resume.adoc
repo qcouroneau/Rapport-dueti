@@ -9,3 +9,33 @@ Next, I will introduce you the biggest computer science project I did during thi
 
 Finally, I will make a review of what it has brought me. The cultural enrichment I experienced with University and Everyday Life. 
 
+== On the way to Canada
+
+My year at ets started well before the beginning of September. It is necessary to fill many files to go there.
+
+First, in order to get study permit and work permit, people have to obtain the CAQ (certificat d'acceptation du Québec). This paper need a very solid file which includes evidence about the ability to be housed locally. Evidence of enrollment in a University. Of course, evidence about the identity. And finally, you have to be able to prove your financial capacity to live a year there. For a student in exchange, this amount is more than 10,000 euros. 
+
+This is one of the first obstacles to overcome. As far as I'm concerned, I had to go to a bank to get a loan. This process takes a lot of time, and you need to do it well in advance to have time to deal with the rest of the paperwork.
+
+Once the CAQ obtained, it is now necessary to go to Paris. Only down there is it possible to take the fingerprint. The latter is now mandatory since June 2018. It's still an operation that takes time. Because it is almost mandatory to get an appointment. Waiting time is not even communicated, and I had to wait for almost 2 weeks.
+
+When fingerprinting is complete, the steps for access to Canadian territory are almost complete. However, you still need to get the AVE (Autorisation de voyage électronique). For this one, getting it is fast, and takes very little time.
+
+== First Session at the ETS
+
+When I registered for the ETS, I was offered to be enrolled in the beginning of training course. I accepted this proposal, so I had access to Log100 (computer), Mat145 (mathematics), Com100 (communication) and Chem131 (chemistry). All these courses, and all that has been said, was similar to what I was able to experiment with the IUT of Bordeaux. The first part of the volume of a first time is purely theoretical.
+
+As a general rule, the difficulty of the courses for this first session is relatively simple. The computer course corresponded to the level of the first year of computer science, seen in accelerated. Communication also starts with zeros and does not really require prior knowledge. Mathematics corresponds to a high school level and is not computer mathematics. They are therefore within the reach of all students from DUT. In my case, mathematics was never my forte, but I managed to hang the average.
+
+However, I have a shared opinion on the chemistry course: this course seems to be part of the continuity of studies undertaken by Quebecers. However for us, French students, it goes back several years. Because of this, and due to my shortcomings in this subject, I have not been able to validate this course.
+
+== Secound Session 
+
+For this session, I enrolled myself in classes and because of this, I had to make choices. Course registration is for a short period of the session. The registration system is therefore saturated as soon as it opens, since the majority of ETS courses have a limited number of places. The places at the courses therefore leave very quickly.
+
+Part of the courses I planned to follow through my pedagogic contract were full. I tried to choose new ones that are close to those initially chosen. So I had to replace ING150 with PHY144 "Introduction to Engineering Physics". But also for a moment, LOG121 by MAT260. For the latter, I finally managed to recover LOG121 "Object Oriented Design", this two weeks after the start of classes. It was a mistake on my part to want to recover this course at all costs. I had trouble catching up on projects.
+
+With regard to the courses the other two courses provided in the pedagogical contract. Namely LOG240 "Tests and maintenance", and MAT210 "Logic and discrete mathematics", these are courses that fit well into the tradition of the computer DUT. LOG240 follows the last semester of DUT. As for MAT210, it takes up and deepened notions also seen in DUT.
+
+At the end of this semester, I validated: MAT210, LOG240 and PH144.
+
