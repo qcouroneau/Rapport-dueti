@@ -1,19 +1,16 @@
 //:author: Quentin Couroneau-Mortreuil
 :revnumber: 1.0
 :revdate: 20/05/2019
-= DUETI réalisé à l'école de technologie supérieur de Montréal image:image/ets.jpg[width=450]
-Année réalisé par Quentin Couroneau-Mortreuil, du 1er Septembre 2018 au 30 Avril 2019. Enseignant référent : Karine Rouet
 :icons: font
 :source-highlighter: pygments
+:toc:
+:toc-title: Table des matières
+:toclevels: 2
 
-<<<
-include::page_blanche.adoc[leveloffset=+1]
-<<<
-include::rapport_stage_resume.adoc[leveloffset=+1]
 <<<
 include::rapport_stage_remerciements.adoc[leveloffset=+1]
 <<<
-include::page_blanche.adoc[leveloffset=+1]
+include::rapport_stage_resume.adoc[leveloffset=+1]
 <<<
 include::rapport_stage_table_des_matieres.adoc[leveloffset=+1]
 <<<
@@ -33,3 +30,4 @@ include::rapport_stage_chap3.adoc[leveloffset=+1]
 
 include::rapport_stage_conclusion.adoc[leveloffset=+1]
 <<<
+include::rapport_stage_annexes.adoc[leveloffset=+1]

@@ -1,0 +1,30 @@
+= Annexes
+
+*Annexe 1*
+
+*CU1 - Créer un compte*
+
+*#Préconditions#*
+
+* L’utilisateur est connecté.
+* L’utilisateur est dans l’onglet “Account”.
+
+
+*#Scénario principal#*
+
+. L'utilisateur entre le nom dans le champ “Name”.
+. L'utilisateur remplit ou non le champs “Description”, ce champ est facultatif.
+. L'utilisateur appuie sur le bouton “Add Account”.
+. Le système enregistre le compte avec les données entrées.
+. Le système affiche le compte créé dans la liste de comptes.
+
+*#Scénarios alternatifs#*
+
+* L'utilisateur n’a pas inscrit de nom dans le champ “Name”.
+** Le système affiche un message d’erreur indiquant que le nom est obligatoire.
+** Retour à l’étape 1.
+
+* L'utilisateur inscrit un nom qui se trouve déjà dans la liste.
+** Le système affiche un message d’erreur indiquant que le nom doit être unique.
+** Retour à l’étape 1.
+

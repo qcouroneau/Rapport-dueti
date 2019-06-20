@@ -1,5 +1,4 @@
-[discrete]
-= Summary
+= English Summary
 
 After three years at the University Institute of Technology, I signed up for an internation exchange. As part of a University Diploma in International Technology Studies. This year was held in Montreal I Quebec, province of Canada for a period of eight months. Year in which I validated 48 ects.
 
@@ -9,6 +8,7 @@ Next, I will introduce you the biggest computer science project I did during thi
 
 Finally, I will make a review of what it has brought me. The cultural enrichment I experienced with University and Everyday Life. 
 
+[discrete]
 == On the way to Canada
 
 My year at ets started well before the beginning of September. It is necessary to fill many files to go there.
@@ -21,12 +21,14 @@ Once the CAQ obtained, it is now necessary to go to Paris. Only down there is it
 
 When fingerprinting is complete, the steps for access to Canadian territory are almost complete. However, you still need to get the AVE (Autorisation de voyage électronique). For this one, getting it is fast, and takes very little time.
 
+[discrete]
 == First Session at the ETS
 
 When I registered for the ETS, I was offered to be enrolled in the beginning of training course. I accepted this proposal, so I had access to Log100 (computer), Mat145 (mathematics), Com100 (communication) and Chem131 (chemistry). All these courses, and all that has been said, was similar to what I was able to experiment with the IUT of Bordeaux. The first part of the volume of a first time is purely theoretical.
 
 As a general rule, the difficulty of the courses for this first session is relatively simple. The computer course corresponded to the level of the first year of computer science, seen in accelerated. Communication also starts with zeros and does not really require prior knowledge. Mathematics corresponds to a high school level and is not computer mathematics. They are therefore within the reach of all students from DUT. In my case, mathematics was never my forte, but I managed to hang the average.
 
+[discrete]
 == Secound Session 
 
 For this session, I enrolled myself in classes and because of this, I had to make choices. Course registration is for a short period of the session. The registration system is therefore saturated as soon as it opens, since the majority of ETS courses have a limited number of places. The places at the courses therefore leave very quickly.
@@ -35,6 +37,7 @@ Part of the courses I planned to follow through my pedagogic contract were full.
 
 With regard to the courses the other two courses provided in the pedagogical contract. Namely LOG240 "Tests and maintenance", and MAT210 "Logic and discrete mathematics", these are courses that fit well into the tradition of the computer DUT. LOG240 follows the last semester of DUT. As for MAT210, it takes up and deepened notions also seen in DUT.
 
+[discrete]
 == Course validation
 
 In Canada, the validation of a course is something very different compared to France. They do not use the "unité d'enseignement" system. Here all the courses are independent. We must therefore validate them individually. Nothing will compensate for a score below average, and then it will be necessary to ironed the course.
@@ -47,8 +50,10 @@ In addition, the ETS requires a minimum average of 50% for written exams in addi
 
 There is one exception to this double tier. These are the so-called "off-program" courses. These courses ask for a general average of 60% and nothing else.
 
+[discrete]
 == Cultural enrichment
 
+[discrete]
 === University Life
 
 The School of Higher Technology is a very large institute that welcomes a lot of foreign students every semester. The administrative system is pretty well organized, I did not really have a problem.
@@ -57,6 +62,7 @@ At the level of the courses, you should know that Quebecers can choose the cours
 
 Relations with teachers are more flexible than in France. They are open to all questions and available to give help. Some are even called by their first name. The teachers feel close to the students and there is no very formal framework. Everyone knows each other, but it can sometimes be shocking for us French students to see a student from Quebec dissatisfied with a teacher. The courses in their entirety are quite deceptive for foreigners because they are often very complete. We start the first few weeks with simple things but it quickly becomes complex and we must not let go from the beginning because it is difficult to catch up later.
 
+[discrete]
 === Everyday life
 
 Quebec is known for its rather cold winter. It is necessary to prepare there because it hard a great party of the year (November to April around). The weather always announces two temperatures: the actual temperature, and the temperature felt, which is colder because of the wind factor. Thus, -26 ° can be felt as -40 °. But once you are equipped, the temperature is no longer a problem. And a lot of activities are offered in winter, whether it's the university or the city.
@@ -67,6 +73,7 @@ Public transport is widespread and frequent. The Montreal Transit Corporation (S
 
 In terms of food, we are in America so concessions have to be made on certain points. But we find quickly his account. There are no specialties beyond poutine and maple syrup or dishes based on this local product but in general we eat well. Namely that pharmacies do not only sell drugs but also cosmetics and food.
 
+[discrete]
 == Personal review
 
 I am very positive about my year abroad. Indeed, it is not very easy at first to find oneself far from one's family as well as from one's friends. Nevertheless, I only draw positive from this experience, indeed, I became much more mature than before and much more autonomous. In a general way I would say this stay gave birth in me the desire to travel and to discover the world. I had never been so far and so far from France. I learned to fend for myself, to be a little more curious about myself and to open myself to others. My vision of life has probably evolved over the months. I do not return to France with the same desires and the same expectations but it is a good thing.
