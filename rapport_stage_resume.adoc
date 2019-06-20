@@ -27,8 +27,6 @@ When I registered for the ETS, I was offered to be enrolled in the beginning of 
 
 As a general rule, the difficulty of the courses for this first session is relatively simple. The computer course corresponded to the level of the first year of computer science, seen in accelerated. Communication also starts with zeros and does not really require prior knowledge. Mathematics corresponds to a high school level and is not computer mathematics. They are therefore within the reach of all students from DUT. In my case, mathematics was never my forte, but I managed to hang the average.
 
-However, I have a shared opinion on the chemistry course: this course seems to be part of the continuity of studies undertaken by Quebecers. However for us, French students, it goes back several years. Because of this, and due to my shortcomings in this subject, I have not been able to validate this course.
-
 == Secound Session 
 
 For this session, I enrolled myself in classes and because of this, I had to make choices. Course registration is for a short period of the session. The registration system is therefore saturated as soon as it opens, since the majority of ETS courses have a limited number of places. The places at the courses therefore leave very quickly.
@@ -37,5 +35,38 @@ Part of the courses I planned to follow through my pedagogic contract were full.
 
 With regard to the courses the other two courses provided in the pedagogical contract. Namely LOG240 "Tests and maintenance", and MAT210 "Logic and discrete mathematics", these are courses that fit well into the tradition of the computer DUT. LOG240 follows the last semester of DUT. As for MAT210, it takes up and deepened notions also seen in DUT.
 
-At the end of this semester, I validated: MAT210, LOG240 and PH144.
+== Course validation
 
+In Canada, the validation of a course is something very different compared to France. They do not use the "unité d'enseignement" system. Here all the courses are independent. We must therefore validate them individually. Nothing will compensate for a score below average, and then it will be necessary to ironed the course.
+
+In addition, the validation system can change from one course to another, from one teacher to another. But here are the main lines :
+
+The overall average of a student in court does not have to be half (50% or 10/20) to validate it. Some teachers, depending on the class, will raise or lower this threshold. If the class is performing, it can raise the threshold to 55% or even 60%. On the other hand, if the class seems to be in difficulty compared to the teacher's evaluations, it will be able to reduce this threshold to, for example, 45%.
+
+In addition, the ETS requires a minimum average of 50% for written exams in addition to the condition previously discussed. Indeed, as we have seen above, the overall average of a student must correspond to the threshold set by the teacher. It includes all the notes to written assignments, but also notes of practical work and project. The ETS therefore requires that the average of all written exams be greater than or equal to 50%.
+
+There is one exception to this double tier. These are the so-called "off-program" courses. These courses ask for a general average of 60% and nothing else.
+
+== Cultural enrichment
+
+=== University Life
+
+The School of Higher Technology is a very large institute that welcomes a lot of foreign students every semester. The administrative system is pretty well organized, I did not really have a problem.
+
+At the level of the courses, you should know that Quebecers can choose the courses they want to follow during their session from a list of their degree. As a foreign student, I was able to pick something that interested me. The courses are composed of half-hour and half-hour of practical work, which is very similar to the IUT here in France. There are mid-term and end-of-term exams as well as course-based assignments or assignments. The note system is quite complex (as seen in Chapter 1).
+
+Relations with teachers are more flexible than in France. They are open to all questions and available to give help. Some are even called by their first name. The teachers feel close to the students and there is no very formal framework. Everyone knows each other, but it can sometimes be shocking for us French students to see a student from Quebec dissatisfied with a teacher. The courses in their entirety are quite deceptive for foreigners because they are often very complete. We start the first few weeks with simple things but it quickly becomes complex and we must not let go from the beginning because it is difficult to catch up later.
+
+=== Everyday life
+
+Quebec is known for its rather cold winter. It is necessary to prepare there because it hard a great party of the year (November to April around). The weather always announces two temperatures: the actual temperature, and the temperature felt, which is colder because of the wind factor. Thus, -26 ° can be felt as -40 °. But once you are equipped, the temperature is no longer a problem. And a lot of activities are offered in winter, whether it's the university or the city.
+
+In terms of their rhythm of life, it looks like the rest of the French. The glaring difference is in the evening meal. In Quebec, dinner is taken immediately after the end of the work. Thus, Quebecers eat between 17h and 18h ​​generally.
+
+Public transport is widespread and frequent. The Montreal Transit Corporation (STM) operates 165 bus lines and four metro lines seven days a week. It is possible to take buses twenty-four hours a day. On the other hand, the metros stop around one o'clock in the morning. The shops are open every day, usually until nineteen hours, until four o'clock on the weekends. You will find "convenience stores", small grocery stores, open all around the clock, but priced higher. The city center is full of large shopping centers, part of which is underground to connect them to each other and to the metro.
+
+In terms of food, we are in America so concessions have to be made on certain points. But we find quickly his account. There are no specialties beyond poutine and maple syrup or dishes based on this local product but in general we eat well. Namely that pharmacies do not only sell drugs but also cosmetics and food.
+
+== Personal review
+
+I am very positive about my year abroad. Indeed, it is not very easy at first to find oneself far from one's family as well as from one's friends. Nevertheless, I only draw positive from this experience, indeed, I became much more mature than before and much more autonomous. In a general way I would say this stay gave birth in me the desire to travel and to discover the world. I had never been so far and so far from France. I learned to fend for myself, to be a little more curious about myself and to open myself to others. My vision of life has probably evolved over the months. I do not return to France with the same desires and the same expectations but it is a good thing.
