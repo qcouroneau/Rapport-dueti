@@ -18,7 +18,7 @@ Pour cette session, je me suis inscrit moi-même aux cours et par ce fait, j'ai 
 
 Une partie des cours que j'avais prévu de suivre via mon contrat pédagogique étaient donc plein. J'ai essayé d'en choisir de nouveaux qui se rapprochent de ceux initialement choisis. J'ai donc dû remplacer ING150 par PHY144 "Introduction à la physique du génie". Mais aussi pendant un moment, LOG121 par MAT260. Pour ce dernier, j'ai fini par réussir à récupérer LOG121 "Conception orientée objet", cela deux semaines après le début des cours. Ce fut une erreur de ma part de vouloir à tout prix récupérer ce cours. J'ai en effet eu du mal à rattraper mon retard sur les projets.
 
-En ce qui concerne les cours les deux autres cours prévus dans le contrat pédagogique. À savoir LOG240 "Tests et maintenance ", et MAT210 "Logique et mathématiques discrètes", ce sont des cours qui s'inscrivent bien dans la lignée du DUT informatique. LOG240 fait suite au dernier semestre de DUT. Quant à MAT210, il reprend et approfondie des notions aussi vues en DUT.
+En ce qui concerne les deux autres cours prévus dans le contrat pédagogique. À savoir LOG240 "Tests et maintenance ", et MAT210 "Logique et mathématiques discrètes", ce sont des cours qui s'inscrivent bien dans la lignée du DUT informatique. LOG240 fait suite au dernier semestre de DUT. Quant à MAT210, il reprend et approfondie des notions aussi vues en DUT.
 
 À la fin de ce semestre, j'ai validé : MAT210, LOG240 et PH144.
 
@@ -36,13 +36,13 @@ Il y a cependant une exception à ce double palier. Ce sont les cours dits "hors
 
 === La recherche
 
-En général, les étudiants étrangers habitent en colocation, c'est pourquoi j'ai commencé par prospecter par ce type d'annonce. Connaissant plusieurs autres personnes qui partaient vivre à Montréal au même, j'ai fini par penser que cela serait chose aisé. En parallèle j'ai tout de même candidaté aux résidences étudiante de l'ETS.
+En général, les étudiants étrangers habitent en colocation, c'est pourquoi j'ai commencé par prospecter par ce type d'annonce. Connaissant plusieurs autres personnes qui partaient vivre à Montréal au même moment, j'ai fini par penser que cela serait chose aisé. En parallèle j'ai tout de même candidaté aux résidences étudiante de l'ETS.
 
 La recherche la collocation a fini par prendre beaucoup de temps, sans pour autant mener à une solution. Et au mois de juillet, j'ai appris que j'avais accès aux résidences l'ETS. J'ai fini par choisir cette option pour clore ma phase de recherche de logement.
 
 === L'appartement
 
-J’ai donc habité dans un appartement 5 1⁄2 qui équivaut un T5 en France au prix de 480 $ par mois (environ 320 €). L'appartement est situé à Griffintown et, est composé de 4 chambres, de deux salles de bain et d'une grande pièce principale composé d'un salon et de la cuisine. Il été situé à 2 min de l’ETS, ce qui est un grand plus. Le prix du loyer est relativement cher (4 étudiants qui payent ~500 $ soit ~2000 $ par mois) par rapport au prix des autres logements de cette superficie dans ce quartier. Une partie du prix se justifiant par la proximité de l’école. Ce qui permet de ne pas forcément payer un abonnement aux transports en commun, qui est relativement cher. Il n’y avait aucune caution a payé ni assurance à fournir, et les charges sont incluses dans le prix.
+J’ai donc habité dans un appartement 5 1/2 qui équivaut un T5 en France au prix de 480 $ par mois (environ 320 €). L'appartement est situé à Griffintown et, est composé de 4 chambres, de deux salles de bain et d'une grande pièce principale composé d'un salon et de la cuisine. Il été situé à 2 min de l’ETS, ce qui est un grand plus. Le prix du loyer est relativement cher (4 étudiants qui payent ~500 $ soit ~2000 $ par mois) par rapport au prix des autres logements de cette superficie dans ce quartier. Une partie du prix se justifiant par la proximité de l’école. Ce qui permet de ne pas forcément payer un abonnement aux transports en commun, qui est relativement cher. Il n’y avait aucune caution a payé ni assurance à fournir, et les charges sont incluses dans le prix.
 
 == Les Coûts
 
@@ -60,7 +60,7 @@ Premièrement, il faut faire attention avec sa carte de paiement. Il a évidemme
 
 La plus grande des contraintes que j’ai pu rencontrer concernant les paiements sur place est que bon nombre de magasins ou organisations n’accepte pas le paiement par carte de crédit, mais seulement par carte de débit. Par exemple, pour payer mon loyer, j’étais contraint de retirer les sous en espèces pour les donner au bureau des résidences sachant que les sommes s’élevaient à environ 500 $ le premier semestre, cela était loin d’être pratique.
 
-En ce qui concerne la vie de tous les jours, le coût de la vie s'apparente au coût de la vie dans une grande ville française. Comme présenté un peu plus tôt, le logement est d'environ 320 euros par mois. À cela, il faut rajouter le prix de l'alimentation, qui était en ce qui me concerne cela me coûtait entre 20 et 35 euros par semaine, soit environ 100 euros par mois.
+En ce qui concerne la vie de tous les jours, le coût de la vie s'apparente au coût de la vie dans une grande ville française. Comme présenté un peu plus tôt, le logement est d'environ 320 euros par mois. À cela, il faut rajouter le prix de l'alimentation. Qui, en ce qui me concerne, me coûtait entre 20 et 35 euros par semaine, soit environ 100 euros par mois.
 
 === Santé
 

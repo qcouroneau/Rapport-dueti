@@ -23,13 +23,13 @@ Pour cela, une grande phase de conception est nécessaire. Avec dans l'ordre : l
 
 == Demande client
 
-Le projet commence par une phase une demande client. Il est ainsi demandé à l’équipe de développement d’apporter des modifications apportant de nouvelles  fonctionnalités à l’application. Ces modifications devant apporter “un système de droit d'accès au logiciel (login, mot de passe avec différent droit)”.
+Le projet commence par une phase une demande client. Il est ainsi demandé à l’équipe de développement d’apporter des modifications apportant de nouvelles  fonctionnalités à l’application. Ces modifications devant apporter “un système de droit d'accès au logiciel (login, mot de passe, accès avec différent droit)”.
 
-En effet, lorsque le programme est exécuté, l'application se lance directement. Il n'y a aucune sécurité, et tous les employés de l'entreprise ont les mêmes droits dessus. Cela doit donc changer, avec une connexion sécurisée qui permettra de limiter les droits en fonctions des employés. 
+En effet, lorsque le programme est exécuté, l'application se lance directement. Il n'y a aucune sécurité, et tous les employés de l'entreprise ont les mêmes droits dessus. Cela doit donc changer, avec une connexion sécurisée qui permettra de limiter les droits en fonctions des employés.
 
 == Conception
 
-Maintenant que la demande du client a été explicité. Nous nous sommes tourné vers l'analyse de celle-ci. La demande est assez simple à première vu, mais elle entraîne plusieurs modifications du fonctionnement du logiciel. Nous avons donc travaillé dessus et nous sommes arrivés à la conclusion que cette demande comprends trois fonctionnalités sous-jacentes. Et chacune de ces fonctionnalités comprend des sous-fonctionnalités. Les vois-ci : 
+Maintenant que la demande du client a été explicité. Nous nous sommes tourné vers l'analyse de celle-ci. La demande est assez simple à première vu, mais elle entraîne plusieurs modifications du fonctionnement du logiciel. Nous avons donc travaillé dessus et nous sommes arrivés à la conclusion que cette demande comprends trois fonctionnalités sous-jacentes. Et chacune de ces fonctionnalités comprend des sous-fonctionnalités. Les vois-ci :
 
 Un système d’authentification (fenêtre prévue à cet effet) comprenant :
 
@@ -47,31 +47,29 @@ Limitation du logiciel en fonction des droits (partie non visible des modificati
 * Accès à certaines parties du logiciel en fonction des droits.
 * Accès à certaines fonctionnalités en fonction des droits (tout le monde ne doit pas pouvoir supprimer des utilisateurs / transaction / etc…).
 
-Maintenant que les fonctionnalités majeurs à ajouter dans le programme ont été définies, tournons nous vers les nouvelles manières d'utiliser le logiciel lorsque que les ajouts auront été implémenté. 
+Maintenant que les fonctionnalités majeurs à ajouter dans le programme ont été définies, tournons nous vers les nouvelles manières d'utiliser le logiciel lorsque que les ajouts auront été implémenté.
 
 === Cas d'utilisation
 
-Pour cela, l'équipe de développement à tout d'abord établie plusieurs cas d'utilisation. Ces cas d'utilisations vont permettre de définir les principales manières d'utiliser le logiciel.Pour cela, l'équipe de développement à tout d'abord établie plusieurs cas d'utilisation. Ils contiennent chacun quatre parties. 
+Pour cela, nous avons tout d'abord établie plusieurs cas d'utilisation. Ces cas d'utilisations vont permettre de définir les principales manières d'utiliser le logiciel. Ils contiennent chacun quatre parties.
 
-La première etant les preconditions, on regroupe ici toutes les conditions qui permettent à l'utilisateur d'effectue l'action voulue. 
+La première etant les préconditions, on regroupe ici toutes les conditions qui permettent à l'utilisateur d'effectue l'action voulue.
 
-Exemple : pour ajouter un champ dans une base de données. Ici, nous allons prendre l'exemple de l'ajout d'un compte dans la base. Compte qui comprend un nom et une description. L'utilisateur doit donc être connecté au logiciel et dans l'onglet d'ajout.
+Exemple : Ici, nous allons prendre l'exemple de l'ajout d'un compte dans la base. Compte qui comprend un nom et une description. L'utilisateur doit donc être connecté au logiciel et dans l'onglet d'ajout.
 
 La deuxième partie regroupe les post-conditions. Ici ce sont toutes les conditions qui permettent d'affirmer que l'utilisation voulue s'est bien déroulée. Par exemple, si l'on reprend l'exemple de l'ajout du compte dans la base, une post-condition serait qu'un nouveau compte a bien été ajouté dans la base.
 
-La troisième partie est composée du scénario principal. Celui-ci regroupe l'ensemble des actions utilisateur qui compose l'utilisation voulue. Toujours avec l'exemple de l'ajout du compte dans la base. On va par exemple s'attendre que l'utilisateur remplissent les champs comme le nom et la description, ou encore qu'il appui sur le bouton d'ajout. 
+La troisième partie est composée du scénario principal. Celui-ci regroupe l'ensemble des actions utilisateur qui compose l'utilisation voulue. Toujours avec l'exemple de l'ajout du compte dans la base. On va par exemple s'attendre que l'utilisateur remplissent les champs comme le nom et la description, ou encore qu'il appui sur le bouton d'ajout.
 
-Enfin, la dernière partie regroupe les scénarios alternatifs. Comme pour le scénario principal, c'est une suite d'actions qui composent une utilisation. Mais ici, ce n'est pas l'utilisation principale de la fonction logicielle traitée. Généralement, on regroupe ici les cas qui peuvent amener à une erreur (mais pas uniquement). Avec l'exemple de l'ajout du compte dans la base. Un scénario alternatif serait de tenter d'ajouter un compte dans la base sans avoir renseigné le nom, ce qui va mener à message. 
-
-Voici maintenant un extrait de ces cas d'utilisation (voir annexe 1). Il y décrit l'utilisation du logiciel menant à l'ajout d'un nouvel utilisateur dans la base de donné. 
+Enfin, la dernière partie regroupe les scénarios alternatifs. Comme pour le scénario principal, c'est une suite d'actions qui composent une utilisation. Mais ici, ce n'est pas l'utilisation principale de la fonction logicielle traitée. Généralement, on regroupe ici les cas qui peuvent amener à une erreur (mais pas uniquement). Avec l'exemple de l'ajout du compte dans la base. Un scénario alternatif serait de tenter d'ajouter un compte dans la base sans avoir renseigné le nom, ce qui va mener à un message d'erreur.
 
 Le nombre de cas d'utilisation que nous avons conçus est de 3.
 
-Maintenant que la définition des cas d'utilisation est clair, voici un extrait de nos cas d'utilisation. Ils présentent une nouvelle fonctionnalité. 
+Maintenant que la définition des cas d'utilisation est clair, voici un extrait de nos cas d'utilisation. Il y décrit l'utilisation du logiciel menant à l'ajout d'un nouvel utilisateur dans la base de donné.
 
 === Diagramme de séquence
 
-Suite aux cas d'utilisation et surtout grâce au scénario principal, il va être assez simple de produire des diagrammes de séquence. Ceux-ci vont représenter les interactions entre les acteurs et le système selon un ordre chronologique. 
+Suite aux cas d'utilisation et surtout grâce au scénario principal, il va être assez simple de produire des diagrammes de séquence. Ceux-ci vont représenter les interactions entre les acteurs et le système selon un ordre chronologique.
 
 .Diagramme de séquence de l'ajout d'un ajout dans la base
 image::image/diagSeq.png[Diagramme de séquence]
@@ -80,25 +78,26 @@ Ici, nous pouvons voir comment fonctionne l'ajout d'un champ dans la base (ici l
 
 == Test de boite noire
 
-Maintenant que toutes les modifications on été définies. Que nous connaissons les fonctionnalités qui en découlent. Et que nous connaissons les modules/classes concernés par les modifications. À débuté la phase de conception des tests. 
+Maintenant que toutes les modifications on été définies. Que nous connaissons les fonctionnalités qui en découlent. Et que nous connaissons les modules/classes concernés par les modifications. À débuté la phase de conception des tests.
 
-Pour ce faire, nous avons mis en place la technique de "test de boite noire". Les tests en « boite noire » consistent à examiner uniquement les fonctionnalités d’une application, c’est-à-dire si elle fait ce qu’elle est censée faire, peu importe comment elle le fait. Sa structure et son fonctionnement interne ne sont pas étudiés. Le testeur doit donc savoir quel est le rôle du système et de ses fonctionnalités, mais ignore ses mécanismes internes. Il a un profil uniquement « utilisateur ».
+Pour ce faire, nous avons mis en place la technique des "tests de boite noire". Les tests en « boite noire » consistent à examiner uniquement les fonctionnalités d’une application, c’est-à-dire si elle fait ce qu’elle est censée faire, peu importe comment elle le fait. Sa structure et son fonctionnement interne ne sont pas étudiés. Le testeur doit donc savoir quel est le rôle du système et de ses fonctionnalités, mais ignore ses mécanismes internes. Il a un profil uniquement « utilisateur ».
 
 Ainsi, cette méthode sert à vérifier, après la finalisation d’un projet, si un logiciel ou une application fonctionne bien et sert efficacement ses utilisateurs. Ce qui est cohérent par le fait que le logiciel initial est déjà fonctionnel, et que de nombreuses fonctions ne seront pas modifiés lors du développement.
 
-Nous avond donc prévus de tester un programme en vérifiant que les sorties obtenues sont bien celles prévues pour des entrées données. Pour cela nous avons isolés les variables critiques, celles qui pour certaines paramètres provoquent des erreurs. Ces valeurs provoquant des erreurs sont les "valeurs frontières".  
+Nous avond donc prévus de tester un programme en vérifiant que les sorties obtenues sont bien celles prévues pour des entrées données. Pour cela nous avons isolés les variables critiques, celles qui pour certaines paramètres provoquent des erreurs. Ces valeurs provoquant des erreurs sont les "valeurs frontières".
 
 === Valeurs frontalières
 
 Ces valeurs frontalières sont les valeurs qui sont aux limites de la création d'erreurs dans le logiciel. Par exemple, si une variable ne peut dépasser 50 caractères, les valeurs frontalières sont : 50 car jusque-là, il n'est pas censé avoir d'erreur. Et 51 car c'est à partir de là que le logiciel va produire une erreur (cet exemple est simplifié, il y a en général plus de valeurs frontalière par variable).
 
-// Extrait valeurs front
+.Ensemble des valeurs frontalières de la classe "Account
+image::image/valeurFront.PNG[Valeurs Frontalières]
 
 Voici les valeurs frontalières pour une des classes du programme. Elles sont toutes aux bornes, inférieurs et supérieurs des erreurs.
 
 === Classes d'équivalence
 
-Une fois toutes les valeurs frontalières définies. Nous avons produit un tableau de classes d’équivalence. Le but d'une classe d'équivalence est de prendre une valeur frontalière défini plus tôt et de lui attribuer une validité ou non. C'est-à-dire, pour telle valeur de la variable est ce que la fonction va réussir à effectuer ce pourquoi elle programmée. 
+Une fois toutes les valeurs frontalières définies. Nous avons produit un tableau de classes d’équivalence. Le but d'une classe d'équivalence est de prendre une valeur frontalière défini plus tôt et de lui attribuer une validité ou non. C'est-à-dire, pour telle valeur de la variable est ce que la fonction va réussir à effectuer ce pourquoi elle programmée.
 
 Le tableau de classes d'équivalence va donc permettre de définir une validité (ou non) pour chacune des valeurs frontalières.
 
@@ -136,86 +135,97 @@ Le but de ces cas de tests est de couvrir toutes les classes d'équivalence inva
 
 == Phase de Développement
 
-Nous allons ici nous attarder sur les principaux outils de développement utilises. Nous verrons ensuite les résultats de la phase de programmation. La programmation en elle-même n'étant pas très intéressante (programmation classqiue en java EE). 
+Nous allons ici nous attarder sur les principaux outils de développement utilises. Nous verrons ensuite les résultats de la phase de programmation. La programmation en elle-même n'étant pas très intéressante (programmation classqiue en java EE).
 
 NOTE: En ce qui concerne la chronologie du projet, la phase de développement n'a pas débuté après la phase de conception présentée plus tôt. Elle était en réalité faite en parallèle. Cependant, elle comprenait des parties de développement mineurs qui non pas nécessité de phase de conception. Comme de la correction ou de l'optimisation de code. C'est pendant ces phases de développement mineur que nous avons travaillé sur la conception. Je vais donc ici m'attarder sur les points centraux du développement.
 
 === Trac
 
-Avant de se lancer dans la programmation, nous avons mis en place un service Trac. 
+Avant de se lancer dans la programmation, nous avons mis en place un service Trac.
 
 Trac est un wiki amélioré et un système de suivi des problèmes pour les projets de développement logiciel. Il fournit une interface à Git (ou d’autres systèmes de contrôle de version), un wiki intégré et des fonctions de rapport pratiques. Trac permet de baliser le wiki dans les descriptions de problème et de valider des messages, en créant des liens et des références transparentes entre les bogues, les tâches, les ensembles de modifications, les fichiers et les pages wiki. Une chronologie affiche dans l'ordre tous les événements de projet actuels et passés, ce qui facilite l'acquisition d'une vue d'ensemble du projet et le suivi de ses progrès. La feuille de route indique la voie à suivre, en énumérant les jalons à venir.
 
 Trac permet aussi de mettre au point des "tickets" : ce sont des représentation des tâches à effectuer.
 
-// trac billet
+.Exemple d'un ticket Trac
+image::image/trackTicket.jpg[Ticket Trac]
 
-On peut ainsi notamment y voir : la ou les personnes assignées à cette tâche, la priorité de la tâche ou encore le jalon auquel le ticket appartient. 
+On peut ainsi notamment y voir : la ou les personnes assignées à cette tâche, la priorité de la tâche ou encore le jalon auquel le ticket appartient.
 
 Dans ce projet, Trac va servir de plateforme principale pour tout ce qui tourne autour de la programmation :
 
-* Elle va regrouper une partie de la documentation. C'est par exemple tout ce qui touche à la conception ou au fonctionnement du logiciel. 
+* Elle va regrouper une partie de la documentation. C'est par exemple tout ce qui touche à la conception ou au fonctionnement du logiciel.
 * Elle permet de revoyer vers le git du projet, mais aussi vers les rapport PMD (que nous allons voir juste après).
-* Elle regroupe les tickets en cours et ceux realises 
+* Elle regroupe les tickets en cours et ceux realises
 
 Une fois cet outil mit en place, nous nous sommes tournes vers la mise en place de QALab.
 
 === QALab
 
-QALab est un plugin de Maven, il permet de générer de la documentation. 
+QALab est un plugin de Maven, il permet de générer de la documentation.
 
 Nous avons avant tout utilisé deux outils de QALab :
 
-*Checkstyle* : outil qui permet une validation du style de code et une vérification de la conception. 
+*Checkstyle* : outil qui permet une validation du style de code et une vérification de la conception.
 
-// image Checkstyle
+.Erreurs trouvées par Checkstyle
+image::image/checkstyle.png[CheckStyle]
 
 Ceci est le résultat d’une session de correctifs d’erreurs décelées par Checkstyle. Chacune de ces classes présentait un certain nombre d’erreurs, elles sont présentes dans la colonne Previous Value. On peut ensuite voir que pour la version actuelle du projet, ici celle du 25 janvier 2019, le nombre d’erreurs à baisser. Le nouveau nombre d’erreurs est situé dans la classe Current Value. Nous avons donc sept classes Java qui ont perdu au moins une erreur chacune dans leur code.
 
 *PMD* : outil qui permet une vérification du code (bugs possibles, code mort, code sous-optimal, etc.).
 
-// image PMD
+.Erreurs trouvées par PMD
+image::image/pmd.png[PMD]
 
 Même explication ici, dans la partie Up by, nous pouvons voir les classes qui comportent des erreurs dans leur code, mais qui n’ont pas été modifiées lors de la précédente mise à jour du projet. Dans la partie Down by, nous pouvons voir que les correctifs de la dernière mise à jour se sont concentrés sur des erreurs repérées par PMD dans la classe DBUtils.java. En effet, lors de la précédente version du projet, le nombre d’erreurs (Previous Run) était de 19. Après les correctifs apportés par la dernière version du projet, le nombre d’erreurs est passé à 7 (Current Value).
 
-Pour chacun de ces deux outils, QALab va générer des diagrammes permettant de voir l'état actuel du projet. Que ce soit le nombre d'erreurs actuel, mais aussi le nombre d'erreurs dans les versions précédentes du projet. 
+Pour chacun de ces deux outils, QALab va générer des diagrammes permettant de voir l'état actuel du projet. Que ce soit le nombre d'erreurs actuel, mais aussi le nombre d'erreurs dans les versions précédentes du projet.
 
-// image QALab 
+.Rapport de QALab
+image::image/QALab.png[QALab]
 
 Ici, nous pouvons voir les différentes sessions de corrections d’erreurs. Tout d’abord, le code possédait 1524 erreurs détectées par _Checkstyle_, ainsi que 131 erreurs détectées par _PMD_. Après la première session de correctifs que nous avons apportés, les erreurs de type _CheckStyle_ sont passé de 1524 à 1512. Nous avons ensuite corrigé des erreurs soulevées par _PMD_, elles sont ainsi passées de 131 à 119, on peut cependant noter qu’une nouvelle erreur a été détectée par _Checkstyle_.
 
 === Tests
 
-L'application proposé aux utilisateurs est une interface. Ce qui veut dire que toutes les operations passent par elle. Nous avons donc mis en place des tests utilisants celle ci. 
+L'application proposé aux utilisateurs est une interface. Ce qui veut dire que toutes les operations passent par elle. Nous avons donc mis en place des tests utilisants celle ci.
 
-Le test va donc remplir les champs de l'application et appuyer sur les boutons pour soumettre les requêtes. 
+Le test va donc remplir les champs de l'application et appuyer sur les boutons pour soumettre les requêtes.
 
-// image test
+.Test d'ajout dans la base d'un champ trop long
+image::image/test.PNG[Test]
 
-Ici, nous effectuons un test qui a pour but de générer une erreur. En effet, on tente d'ajouter un utilisateur avec un nom trop grand. On va donc vérifier qu'après avoir essayé d'ajouter cet utilisateur, une erreur est bien générée. Et que l'utilisateur n'a donc pas été ajouté dans la base. 
+Ici, nous effectuons un test qui a pour but de générer une erreur. En effet, on tente d'ajouter un utilisateur avec un nom trop grand. On va donc vérifier qu'après avoir essayé d'ajouter cet utilisateur, une erreur est bien générée. Et que l'utilisateur n'a donc pas été ajouté dans la base.
 
-NOTE: "accountsButton" est en rouge, car dans la version final du projet, il n'existe plus. En effet, ces tests fonctionnent avant la réingénierie du projet qui a déplacé les interactions avec la base de données dans une classe specifique (DAO). 
+NOTE: "accountsButton" est en rouge, car dans la version final du projet, il n'existe plus. En effet, ces tests fonctionnent avant la réingénierie du projet qui a déplacé les interactions avec la base de données dans une classe specifique (DAO).
 
 == Résultat
 
+
 Maintenant que toutes les modifications ont été implemetees. Le logiciel possède une interface de connexion :
 
-// image connexion
+.Fenêtre de connexion
+image::image/connexion.PNG[Fenêtre de connexion]
 
-On peut ici y renseigner son identifiant et son mot de passe. Le logiciel va ensuite limiter les droits en fonctions du poste occupé par la personne qui se connecte. Première exemple, ici un utilisateur "employé" : 
+On peut ici y renseigner son identifiant et son mot de passe. Le logiciel va ensuite limiter les droits en fonctions du poste occupé par la personne qui se connecte. Première exemple, ici un utilisateur "employé" :
 
-// image droit 1
+.L'application d'un employé
+image::image/userWindow.PNG[L'application d'un employé]
 
-Il n'a pas accès à toutes les fonctionnalités logiciel (ici Account et Ledger). Maintenant voyons la fenetre d'un utilisateur ayant tout les accès : 
+Il n'a pas accès à toutes les fonctionnalités logiciel (ici Account et Ledger). Maintenant voyons la fenetre d'un utilisateur ayant tout les accès :
 
-// image droit 2
+.L'application d'un "chef"
+image::image/masterWindow.PNG[L'application d'un chef]
 
-Ici aucunes des fonctionnalités sont disponible. 
+Ici aucunes des fonctionnalités sont disponible.
 
 == Conclusion
 
 Si j'ai choisi de vous présenter ce projet, ce n'est pas pour son côté programmation comme vous avez pu le constater. Il fait en effet suite au cours du semestre 4 concernant le développement en Java EE. C'est une partie de ce qui m'a plus, car ce projet m'a permis de mieux comprendre est d'approfondir ce point que j'avais assez mal assimilé lors de mon DUT.
 
-Si j'ai choisi de vous parler de ce projet, c'est pour tout ce qui gravite autour. J'ai appris plusieurs nouvelles méthodes qui servent à la conception. Que ce soient les cas d'utilisation, la définition des valeurs frontalières et la mise en place des classes d'équivalence. 
+Si j'ai choisi de vous parler de ce projet, c'est pour tout ce qui gravite autour. J'ai appris plusieurs nouvelles méthodes qui servent à la conception. Que ce soient les cas d'utilisation, la définition des valeurs frontalières et la mise en place des classes d'équivalence.
 
-Mais aussi pour les nouveaux outils de maintenance que je trouve très pratique. QALab dans un premier temps, qui relève énormément d'erreurs et de mauvaise pratique pouvant mener à de futures erreurs. Trac m'a aussi beaucoup plus, la création de tickets et pratique bien qu'un peu superficiel, cette tâche pouvant être réalisé sur n'importe quel document. Cependant son wiki intégré et assez simple d'utilisation et à mettre en place. Les tests par utilisation de l'interface graphique sont aussi une découverte pour moi. Bien que je trouve ceux-ci un peu limités car essayant de reproduire le comportement humain, qui est assez imprévisible. Je les trouve assez intuitifs.
+Mais aussi pour les nouveaux outils de maintenance que je trouve très pratique. QALab dans un premier temps, qui relève énormément d'erreurs et de mauvaise pratique pouvant mener à de futures erreurs. Trac m'a aussi beaucoup plus, la création de tickets et pratique bien qu'un peu superficiel, cette tâche pouvant être réalisé sur n'importe quel document. Cependant son wiki intégré est assez simple d'utilisation et à mettre en place.
+
+Les tests par utilisation de l'interface graphique sont aussi une découverte pour moi. Bien que je trouve ceux-ci un peu limités car essayant de reproduire le comportement humain, qui est assez imprévisible. Je les trouve assez intuitifs.
