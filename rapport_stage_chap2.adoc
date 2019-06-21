@@ -17,19 +17,19 @@ L’état du logiciel FinanceJ n’est pas reluisant. Ses utilisateurs trouvent 
 
 image:image/.jpg[width=450]
 
-Le but du projet est donc de reprendre cette application, et de l'améliorer pour l'emmener vers une version utilisable.
+Le but du projet est donc de reprendre cette application et de l'améliorer pour l'emmener vers une version utilisable.
 
-Pour cela, une grande phase de conception est nécessaire. Avec dans l'ordre : l'analyse de la demande client. Une conception des cas d'utilisation qui en découlent. La conception des tests à implémenter pour définir si les modifications sont bonnes. Et enfin le développement qui commencera par la mise en place d'outils Maven, puis par l'implémentation en Java EE.
+Pour cela, une grande phase de conception est nécessaire. Avec dans l'ordre : l'analyse de la demande client. Une conception des cas d'utilisation qui en découle. La conception des tests à implémenter pour définir si les modifications sont bonnes. Et enfin le développement qui commencera par la mise en place d'outils Maven, puis par l'implémentation en Java EE.
 
 == Demande client
 
-Le projet commence par une phase une demande client. Il est ainsi demandé à l’équipe de développement d’apporter des modifications apportant de nouvelles  fonctionnalités à l’application. Ces modifications devant apporter “un système de droit d'accès au logiciel (login, mot de passe, accès avec différent droit)”.
+Le projet commence par une demande client. Il est ainsi demandé à l’équipe de développement d’apporter des modifications apportant de nouvelles  fonctionnalités à l’application. Ces modifications devant apporter “un système de droit d'accès au logiciel (login, mot de passe, accès avec différent droit)”.
 
-En effet, lorsque le programme est exécuté, l'application se lance directement. Il n'y a aucune sécurité, et tous les employés de l'entreprise ont les mêmes droits dessus. Cela doit donc changer, avec une connexion sécurisée qui permettra de limiter les droits en fonctions des employés.
+En effet, lorsque le programme est exécuté, l'application se lance directement. Il n'y a aucune sécurité, et tous les employés de l'entreprise ont les mêmes droits dessus. Cela doit donc changer avec une connexion sécurisée qui permettra de limiter les droits en fonction des employés.
 
 == Conception
 
-Maintenant que la demande du client a été explicité. Nous nous sommes tourné vers l'analyse de celle-ci. La demande est assez simple à première vu, mais elle entraîne plusieurs modifications du fonctionnement du logiciel. Nous avons donc travaillé dessus et nous sommes arrivés à la conclusion que cette demande comprends trois fonctionnalités sous-jacentes. Et chacune de ces fonctionnalités comprend des sous-fonctionnalités. Les vois-ci :
+Maintenant que la demande du client a été explicitée. Nous nous sommes tournés vers l'analyse de celle-ci. La demande est assez simple à première vue, mais elle entraîne plusieurs modifications du fonctionnement du logiciel. Nous avons donc travaillé dessus et nous sommes arrivés à la conclusion que cette demande comprend trois fonctionnalités sous-jacentes. Et chacune de ces fonctionnalités comprend des sous-fonctionnalités. Les voici :
 
 Un système d’authentification (fenêtre prévue à cet effet) comprenant :
 
@@ -47,11 +47,11 @@ Limitation du logiciel en fonction des droits (partie non visible des modificati
 * Accès à certaines parties du logiciel en fonction des droits.
 * Accès à certaines fonctionnalités en fonction des droits (tout le monde ne doit pas pouvoir supprimer des utilisateurs / transaction / etc…).
 
-Maintenant que les fonctionnalités majeurs à ajouter dans le programme ont été définies, tournons nous vers les nouvelles manières d'utiliser le logiciel lorsque que les ajouts auront été implémenté.
+Maintenant que les fonctionnalités majeures à ajouter dans le programme ont été définies, tournons nous vers les nouvelles manières d'utiliser le logiciel lorsque que les ajouts auront été implémentés.
 
 === Cas d'utilisation
 
-Pour cela, nous avons tout d'abord établie plusieurs cas d'utilisation. Ces cas d'utilisations vont permettre de définir les principales manières d'utiliser le logiciel. Ils contiennent chacun quatre parties.
+Pour cela, nous avons tout d'abord établi plusieurs cas d'utilisation. Ces cas d'utilisations vont permettrent de définir les principales manières d'utiliser le logiciel. Ils contiennent chacun quatre parties.
 
 La première étant les préconditions, on regroupe ici toutes les conditions qui permettent à l'utilisateur d'effectuer l'action voulue.éffectuer l'action voulue.
 
@@ -59,11 +59,11 @@ Exemple : Ici, nous allons prendre l'exemple de l'ajout d'un compte dans la base
 
 La deuxième partie regroupe les post-conditions. Ici, ce sont toutes les conditions qui permettent d'affirmer que l'utilisation voulue s'est bien déroulée. Par exemple, si l'on reprend l'exemple de l'ajout du compte dans la base, une post-condition serait qu'un nouveau compte a bien été ajouté dans la base.
 
-La troisième partie est composée du scénario principal. Celui-ci regroupe l'ensemble des actions utilisateur qui compose l'utilisation voulue. Toujours avec l'exemple de l'ajout du compte dans la base. On va par exemple s'attendre que l'utilisateur remplissent les champs comme le nom et la description, ou encore qu'il appuie sur le bouton d'ajout.
+La troisième partie est composée du scénario principal. Celui-ci regroupe l'ensemble des actions utilisateur qui compose l'utilisation voulue. Toujours avec l'exemple de l'ajout du compte dans la base. On va par exemple s'attendre à ce que l'utilisateur remplisse les champs comme le nom et la description ou encore qu'il appuie sur le bouton d'ajout.
 
-Enfin, la dernière partie regroupe les scénarios alternatifs. Comme pour le scénario principal, c'est une suite d'actions qui composent une utilisation. Mais ici, ce n'est pas l'utilisation principale de la fonction logicielle traitée. Généralement, on regroupe ici les cas qui peuvent amener à une erreur (mais pas uniquement). Avec l'exemple de l'ajout du compte dans la base. Un scénario alternatif serait de tenter d'ajouter un compte dans la base sans avoir renseigné le nom, ce qui va mener à un message d'erreur.
+Enfin, la dernière partie regroupe les scénarios alternatifs. Comme pour le scénario principal, c'est une suite d'actions qui composent une utilisation. Mais ici, ce n'est pas l'utilisation principale de la fonction logicielle traitée. Généralement, on regroupe ici les cas qui peuvent amener à une erreur (mais pas uniquement). Avec l'exemple de l'ajout du compte dans la base. Un scénario alternatif serait de tenter d'ajouter un compte dans la base sans avoir renseigné le nom, ce qui va amener un message d'erreur.
 
-Le nombre de cas d'utilisation que nous avons conçus est de 3.
+Le nombre de cas d'utilisation que nous avons conçu est de 3.
 
 Maintenant que la définition des cas d'utilisation est clair, voici un extrait de nos cas d'utilisation. Il y décrit l'utilisation du logiciel menant à l'ajout d'un nouvel utilisateur dans la base de donner.
 
@@ -78,26 +78,26 @@ Ici, nous pouvons voir comment fonctionne l'ajout d'un champ dans la base (ici l
 
 == Test de boite noire
 
-Maintenant que toutes les modifications, on été définies. Que nous connaissons les fonctionnalités qui en découlent. Et que nous connaissons les modules/classes concernés par les modifications. À débuté la phase de conception des tests.
+Maintenant que toutes les modifications, on été définies, que nous connaissons les fonctionnalités qui en découlent, ainsi que les modules/classes concernés par les modifications. Débute maintenant la phase de conception des tests.
 
 Pour ce faire, nous avons mis en place la technique des "tests de boite noire". Les tests en « boite noire » consistent à examiner uniquement les fonctionnalités d’une application, c’est-à-dire si elle fait ce qu’elle est censée faire, peu importe comment elle le fait. Sa structure et son fonctionnement interne ne sont pas étudiés. Le testeur doit donc savoir quel est le rôle du système et de ses fonctionnalités, mais ignore ses mécanismes internes. Il a un profil uniquement « utilisateur ».
 
-Ainsi, cette méthode sert à vérifier, après la finalisation d’un projet, si un logiciel ou une application fonctionne bien et sert efficacement ses utilisateurs. Ce qui est cohérent par le fait que le logiciel initial est déjà fonctionnel, et que de nombreuses fonctions ne seront pas modifiés lors du développement.
+Ainsi, cette méthode sert à vérifier, après la finalisation d’un projet, si un logiciel ou une application fonctionne bien et sert efficacement ses utilisateurs. Ce qui est cohérent par le fait que le logiciel initial est déjà fonctionnel et que de nombreuses fonctions ne seront pas modifiées lors du développement.
 
-Nous avons donc prévus de tester un programme en vérifiant que les sorties obtenues sont bien celles prévues pour des entrées données. Pour cela, nous avons isolé les variables critiques, celles qui pour certains paramètres provoquent des erreurs. Ces valeurs, provoquant des erreurs, sont les "valeurs frontières".
+Nous avons donc prévu de tester un programme en vérifiant que les sorties obtenues sont bien celles prévues pour des entrées données. Pour cela, nous avons isolé les variables critiques, celles qui pour certains paramètres provoquent des erreurs. Ces valeurs, provoquant des erreurs, sont les "valeurs frontalières".
 
 === Valeurs frontalières
 
-Ces valeurs frontalières sont les valeurs qui sont aux limites de la création d'erreurs dans le logiciel. Par exemple, si une variable ne peut dépasser 50 caractères, les valeurs frontalières sont : 50 car jusque-là, il n'est pas censé avoir d'erreur. Et 51 car c'est à partir de là que le logiciel va produire une erreur (cet exemple est simplifié, il y a en général plus de valeurs frontalière par variable).
+Ces valeurs frontalières sont les valeurs qui sont aux limites de la création d'erreurs dans le logiciel. Par exemple, si une variable ne peut dépasser 50 caractères, les valeurs frontalières sont : 50 car jusque-là, il n'est pas censé y avoir d'erreur. Et 51 car c'est à partir de là que le logiciel va produire une erreur (cet exemple est simplifié, il y a en général plus de valeurs frontalières par variable).
 
 .Ensemble des valeurs frontalières de la classe "Account
 image::image/valeurFront.PNG[Valeurs Frontalières]
 
-Voici les valeurs frontalières pour une des classes du programme. Elles sont toutes aux bornes, inférieurs et supérieurs des erreurs.
+Voici les valeurs frontalières pour une des classes du programme. Elles sont toutes aux bornes, inférieures et supérieures des erreurs.
 
 === Classes d'équivalence
 
-Une fois toutes les valeurs frontalières définies. Nous avons produit un tableau de classes d’équivalence. Le but d'une classe d'équivalence est de prendre une valeur frontalière défini plus tôt et de lui attribuer une validité ou non. C'est-à-dire, pour telle valeur de la variable est ce que la fonction va réussir à effectuer ce pourquoi elle programmée.
+Une fois toutes les valeurs frontalières définies, nous avons produit un tableau de classes d’équivalence. Le but d'une classe d'équivalence est de prendre une valeur frontalière définie plus tôt et de lui attribuer une validité ou non. C'est-à-dire, pour telle valeur de la variable est ce que la fonction va réussir à effectuer ce pourquoi elle est programmée.
 
 Le tableau de classes d'équivalence va donc permettre de définir une validité (ou non) pour chacune des valeurs frontalières.
 
@@ -106,7 +106,7 @@ image::image/classeEqui.png[Diagramme de classe]
 
 Nous pouvons voir, de gauche à droite :
 
-* Le nom de la variable concerné.
+* Le nom de la variable concernée.
 * Une description de cette variable.
 * L'identificateur que l'on donne à cette classe d'équivalence.
 * La valeur frontalière concernée.
@@ -127,7 +127,7 @@ Nous pouvons voir, de gauche à droite :
 * Les post-conditions permettant de définir si le test s'est bien déroulé.
 * Les entrées des variables (ici, on veut qu'à l'entrée de la fonction, la variable "Name" ai plus de 50 caractères).
 * L'identificateur de la classe d'équivalence définit plutôt. On met ici toutes les classes d'équivalence valides, c'est-à-dire celle qui ne produisent pas d'erreur. Dans ce cas, nous avons au moins 1 caractère alphanumérique (EC1), une longueur plus petite ou égale à 50 (EC2), etc.
-* L'identificateur de la classe d'équivalence définit plutôt. On met ici toutes les classes d'équivalence invalides, c'est-à-dire celle qui produisent des erreur (cette colonne peut être vide si le test a pour but de ne pas produire d'erreur). Dans notre cas, nous avons une longueur plus longue que 50 (EC4), ce qui va produire une erreur.
+* L'identificateur de la classe d'équivalence définit plutôt. On met ici toutes les classes d'équivalence invalides, c'est-à-dire celle qui produisent des erreurs (cette colonne peut être vide si le test a pour but de ne pas produire d'erreur). Dans notre cas, nous avons une longueur plus longue que 50 (EC4), ce qui va produire une erreur.
 * La sortie système obtenue. Ici, c'est ce que le logiciel va retourner à l'utilisateur dans le terminal.
 * Une description permettant d'expliquer le déroulement du test.
 
