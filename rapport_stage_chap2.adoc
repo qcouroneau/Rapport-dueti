@@ -128,16 +128,16 @@ Nous pouvons voir, de gauche à droite :
 * Les entrées des variables (ici, on veut qu'à l'entrée de la fonction, la variable "Name" ai plus de 50 caractères).
 * L'identificateur de la classe d'équivalence définit plutôt. On met ici toutes les classes d'équivalence valides, c'est-à-dire celle qui ne produisent pas d'erreur. Dans ce cas, nous avons au moins 1 caractère alphanumérique (EC1), une longueur plus petite ou égale à 50 (EC2), etc.
 * L'identificateur de la classe d'équivalence définit plutôt. On met ici toutes les classes d'équivalence invalides, c'est-à-dire celle qui produisent des erreur (cette colonne peut être vide si le test a pour but de ne pas produire d'erreur). Dans notre cas, nous avons une longueur plus longue que 50 (EC4), ce qui va produire une erreur.
-* La sortie système obtenu. Ici, c'est ce que le logiciel va retourner à l'utilisateur dans le terminal.
+* La sortie système obtenue. Ici, c'est ce que le logiciel va retourner à l'utilisateur dans le terminal.
 * Une description permettant d'expliquer le déroulement du test.
 
-Le but de ces cas de tests est de couvrir toutes les classes d'équivalence invalides pour être sûr de tester tous les cas d'erreur possible (ou au moins ceux définît par l'équipe) tout en évitant la redondance. Une fois, toutes les classes d'équivalence invalide traitées, il ne reste plus qu'à les implémenter.
+Le but de ces cas de tests est de couvrir toutes les classes d'équivalence invalides pour être sûr de tester tous les cas d'erreur possible (ou au moins ceux définis par l'équipe) tout en évitant la redondance. Une fois, toutes les classes d'équivalence invalide traitées, il ne reste plus qu'à les implémenter.
 
 == Phase de Développement
 
-Nous allons ici nous attarder sur les principaux outils de développement utilises. Nous verrons ensuite les résultats de la phase de programmation. La programmation en elle-même n'étant pas très intéressante (programmation classique en java EE).
+Nous allons ici nous attarder sur les principaux outils de développement utilisés. Nous verrons ensuite les résultats de la phase de programmation. La programmation en elle-même n'étant pas très intéressante (programmation classique en java EE).
 
-NOTE: En ce qui concerne la chronologie du projet, la phase de développement n'a pas débuté après la phase de conception présentée plus tôt. Elle était en réalité faite en parallèle. Cependant, elle comprenait des parties de développement mineurs qui n'ont pas nécessité de conception. Comme de la correction ou de l'optimisation de code. C'est pendant ces phases de développement mineur que nous avons travaillé sur la conception. Je vais donc ici m'attarder sur les points centraux du développement.
+NOTE: En ce qui concerne la chronologie du projet, la phase de développement n'a pas débuté après la phase de conception présentée plus tôt. Elle était en réalité faite en parallèle. Cependant, elle comprenait des parties de développement mineures qui n'ont pas nécessité de conception, comme de la correction ou de l'optimisation de code. C'est pendant ces phases de développement mineures que nous avons travaillé sur la conception. Je vais donc ici m'attarder sur les points centraux du développement.
 
 === Trac
 
@@ -158,7 +158,7 @@ Dans ce projet, Trac va servir de plateforme principale pour tout ce qui tourne 
 * Elle permet de renvoyer vers le GIT du projet, mais aussi vers les rapport PMD (que nous allons voir juste après).
 * Elle regroupe les tickets en cours et ceux réalisés
 
-Une fois cet outil mit en place, nous nous sommes tournes vers la mise en place de QALab.
+Une fois cet outil mis en place, nous nous sommes tournés vers la mise en place de QALab.
 
 === QALab
 
@@ -196,7 +196,7 @@ Le test va donc remplir les champs de l'application et appuyer sur les boutons p
 .Test d'ajout dans la base d'un champ trop long
 image::image/test.PNG[Test]
 
-Ici, nous effectuons un test qui a pour but de générer une erreur. En effet, on tente d'ajouter un utilisateur avec un nom trop grand. On va donc vérifier qu'après avoir essayé d'ajouter cet utilisateur, une erreur est bien générée. Et que l'utilisateur n'a donc pas été ajouté dans la base.
+Ici, nous effectuons un test qui a pour but de générer une erreur. En effet, on tente d'ajouter un utilisateur avec un nom trop grand. On va donc vérifier qu'après avoir essayé d'ajouter cet utilisateur, une erreur est bien générée, et que l'utilisateur n'a donc pas été ajouté dans la base.
 
 NOTE: "accountsButton" est en rouge, car dans la version final du projet, il n'existe plus. En effet, ces tests fonctionnent avant la réingénierie du projet qui a déplacé les interactions avec la base de données dans une classe spécifique (DAO).
 
@@ -207,24 +207,24 @@ Maintenant que toutes les modifications ont été implémentées. Le logiciel po
 .Fenêtre de connexion
 image::image/connexion.PNG[Fenêtre de connexion]
 
-On peut ici y renseigner son identifiant et son mot de passe. Le logiciel va ensuite limiter les droits en fonctions du poste occupé par la personne qui se connecte. Premier exemple, ici un utilisateur "employé" :
+On peut ici y renseigner son identifiant et son mot de passe. Le logiciel va ensuite limiter les droits en fonction du poste occupé par la personne qui se connecte. Premier exemple, ici un utilisateur "employé" :
 
 .L'application d'un employé
 image::image/userWindow.PNG[L'application d'un employé]
 
-Il n'a pas accès à toutes les fonctionnalités logiciel (ici Account et Ledger). Maintenant voyons la fenêtre d'un utilisateur ayant tout les accès :
+Il n'a pas accès à toutes les fonctionnalités logiciel (ici Account et Ledger). Maintenant voyons la fenêtre d'un utilisateur ayant tous les accès :
 
 .L'application d'un "chef"
 image::image/masterWindow.PNG[L'application d'un chef]
 
-Ici, aucune des fonctionnalités est indisponible.
+Ici,toutes les fonctionnalités sont disponible.
 
 == Conclusion
 
-Si j'ai choisi de vous présenter ce projet, ce n'est pas pour son côté programmation comme vous avez pu le constater. Il fait en effet suite au cours du semestre 4 concernant le développement en Java EE. C'est une partie de ce qui m'a plus, car ce projet m'a permis de mieux comprendre est d'approfondir ce point que j'avais assez mal assimilé lors de mon DUT.
+Si j'ai choisi de vous présenter ce projet, ce n'est pas pour son côté programmation comme vous avez pu le constater. Il fait en effet suite au cours du semestre 4 concernant le développement en Java EE. C'est une partie de ce qui m'a plu car ce projet m'a permi de mieux comprendre et d'approfondir ce point que j'avais assez mal assimilé lors de mon DUT.
 
-Si j'ai choisi de vous parler de ce projet, c'est pour tout ce qui gravite autour. J'ai appris plusieurs nouvelles méthodes qui servent à la conception. Que ce soient les cas d'utilisation, la définition des valeurs frontalières et la mise en place des classes d'équivalence.
+Si j'ai choisi de vous parler de ce projet, c'est pour tout ce qui gravite autour. J'ai appris plusieurs nouvelles méthodes qui servent à la conception, que ce soit les cas d'utilisation, la définition des valeurs frontalières et la mise en place des classes d'équivalence.
 
-Mais aussi pour les nouveaux outils de maintenance que je trouve très pratique. QALab dans un premier temps, qui relève énormément d'erreurs et de mauvaise pratique pouvant mener à de futures erreurs. Trac m'a aussi beaucoup plus, la création de tickets et pratique bien qu'un peu superficiel, cette tâche pouvant être réalisé sur n'importe quel document. Cependant, son wiki intégré est assez simple d'utilisation et à mettre en place.
+Mais aussi pour les nouveaux outils de maintenance que je trouve très pratique. QALab dans un premier temps qui relève énormément d'erreurs et de mauvaises pratiques pouvant mener à de futures erreurs. Trac m'a aussi beaucoup intéressé, la création de tickets est pratique bien qu'un peu superficielle, cette tâche pouvant être réalisée sur n'importe quel document. Cependant, son wiki intégré est assez simple d'utilisation et à mettre en place.
 
 Les tests par utilisation de l'interface graphique sont aussi une découverte pour moi. Bien que je trouve ceux-ci un peu limités car essayant de reproduire le comportement humain, qui est assez imprévisible. Je les trouve assez intuitifs.
