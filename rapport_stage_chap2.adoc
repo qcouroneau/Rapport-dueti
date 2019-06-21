@@ -65,7 +65,7 @@ Enfin, la dernière partie regroupe les scénarios alternatifs. Comme pour le sc
 
 Le nombre de cas d'utilisation que nous avons conçu est de 3.
 
-Maintenant que la définition des cas d'utilisation est clair, voici un extrait de nos cas d'utilisation. Il y décrit l'utilisation du logiciel menant à l'ajout d'un nouvel utilisateur dans la base de donner.
+NOTE: Voir l'annexe 1 pour un exemple. Il y est décrit l'utilisation du logiciel menant à l'ajout d'un nouvel utilisateur dans la base de donner.
 
 === Diagramme de séquence
 
